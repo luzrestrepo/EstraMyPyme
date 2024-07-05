@@ -1,0 +1,22 @@
+
+  /* Estilos básicos para el slider */
+  .slider {
+      overflow: hidden;
+      width: 100%;
+    }
+    .slider-track {
+      display: flex;
+      animation: scroll 10s linear infinite;
+    }
+    .slider-item {
+      flex: 0 0 auto;
+      width: 100%;
+    }
+    .slider-item img {
+      display: block;
+      width: 50px;
+    }
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-100%); }
+    }
