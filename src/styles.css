@@ -3,41 +3,49 @@ body {
   width: 100%;
   height: 100vh;
   color: #ffffff2c;
-  background: linear-gradient(45deg,#07a2d6 ,#f6bf3c ,#a4655d );
+  background: linear-gradient(45deg, #07a2d6, #f6bf3c, #a4655d);
   background-size: 400% 400%;
   position: relative;
   animation: cambiar 10s ease-in-out infinite;
 }
-@keyframes cambiar{
-  0%{background-position: 0 50%;}
-  50%{background-position: 100% 50%;}
-  100%{background-position: 0 50%;}
+@keyframes cambiar {
+  0% {
+    background-position: 0 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0 50%;
+  }
 }
-p { 
+p {
   text-align: center;
-  color:  BLACK;
+  color: BLACK;
   text-shadow: none;
   font-family: monospace 100%;
   text-align: center;
 }
 h1 {
   text-align: center;
-  color:  BLACK;
+  color: BLACK;
   text-shadow: none;
   font-family: monospace 100%;
   text-align: center;
-
 }
-  /* Estilos adicionales para el footer */
-  footer {
-    position: fixed;
-    bottom: 20%;
-    width: 100%;
-    background: transparent padding 10px 0;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-  }
-  footer p {
-    text-align: center;
-    margin: 0;
-    color: white; /* Asegura que el texto sea visible sobre el fondo */
-  }
+/* Estilos adicionales para el footer */
+footer {
+  position: fixed;
+  bottom: 20%;
+  width: 100%;
+  background: transparent padding 10px 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+footer p {
+  text-align: center;
+  margin: 0;
+  color: white; /* Asegura que el texto sea visible sobre el fondo */
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
