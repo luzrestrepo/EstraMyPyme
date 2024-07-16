@@ -3,7 +3,7 @@ body {
   width: 100%;
   height: 100vh;
   color: #ffffff2c;
-  background: linear-gradient(45deg, #07a2d6, #f6bf3c, #a4655d);
+  /* background: linear-gradient(45deg, #07a2d6, #f6bf3c, #a4655d); */
   background-size: 400% 400%;
   position: relative;
   animation: cambiar 10s ease-in-out infinite;
