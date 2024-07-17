@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
-import { FooterComponent } from './footer/footer.component';
+import { RouterOutlet } from '@angular/router';
+import { FooterComponent } from "./footer/footer.component";
+import { TextComponent } from "./main/text/text.component";
 
 import { LoginComponent } from './login/login.component';
+import { Landpage1Component } from "./landpage1/landpage1.component";
 import { RegisterComponent } from "./register/register.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FooterComponent, RouterLink, LoginComponent, RegisterComponent],
+  imports: [RouterOutlet, FooterComponent, LoginComponent, TextComponent, RegisterComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
