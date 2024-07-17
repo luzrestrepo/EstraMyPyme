@@ -9,7 +9,7 @@ import { Landpage1Component } from "./landpage1/landpage1.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, FooterComponent, RouterLink, LoginComponent, TextComponent],
+  imports: [RouterOutlet, FooterComponent, LoginComponent, TextComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
 })
