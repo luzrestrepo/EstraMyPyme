@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>EstraPymes</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav class="nav">
+        <div class="nav-somos">
+          <a href="/"><p>Quienes somos</p></a>
+        </div>
+        <div class="nav-menu" id="navMenu">
+          <ul>
+            <li>
+              <a
+                href="https://www.instagram.com/nodo.eafit/"
+                class="link"
+                target="_blank"
+                ><i class="bx bxl-instagram"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://web.telegram.org/a/" class="link" target="_blank"
+                ><i class="bx bxl-telegram"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://web.whatsapp.com/" class="link" target="_blank"
+                ><i class="bx bxl-whatsapp"></i
+              ></a>
+            </li>
+          </ul>
+                  
+        </div>
+        <div class="nav-boton">
+          <button class="btn white-btn" id="loginBtn" routerLink="/login">
+            Iniciar sesión
+          </button>
+          <button class="btn" id="registerBtn" routerLink="/register">
+            Registrase
+          </button>
+        </div>
+      </nav>
+
+      <div class="form-box">
+        <div class="login-container">
+          <header>Acceso</header>
+          <div class="input-box">
+            <input
+              type="text"
+              class="input-field"
+              placeholder="Nombre de usuario o correo electrónico"
+            />
+            <i class="bx bx-user"></i>
+          </div>
+          <div class="input-box">
+            <input
+              type="password"
+              class="input-field"
+              placeholder="Contraseña"
+            />
+            <i class="bx bx-lock-alt"></i>
+          </div>
+          <div class="input-box">
+            <input type="submit" class="submit" value="Iniciar sesión" />
+          </div>
+          <div class="top">
+            <span
+              >¿No tienes una cuenta?
+              <a routerLink="/register">Registrarse</a></span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

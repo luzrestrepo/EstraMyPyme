@@ -1,0 +1,180 @@
+<body class="background-gradient flex items-center justify-center h-screen">
+  <div class="flex w-full max-w-6xl">
+    <!-- Parte izquierda con texto -->
+    <div
+      class="w-1/2 bg-gray-900 text-white p-8 flex flex-col justify-center rounded-s-lg"
+    >
+      <h2 class="text-4xl font-semibold">
+        Bienvenido, Regístrate para empezar con tu prueba gratuita
+      </h2>
+    </div>
+
+    <!-- Parte derecha con formulario -->
+    <div class="w-1/2 bg-white p-8 shadow-lg rounded-r-lg">
+      <h2 class="text-2xl font-semibold text-gray-700 text-center">
+        Register Form
+      </h2>
+      <p class="text-center text-gray-500">Estra My Pyme</p>
+      <form
+        [formGroup]="registerForm"
+        (ngSubmit)="register()"
+        class="mt-4 space-y-4"
+      >
+        <div>
+          <input
+            type="text"
+            formControlName="name"
+            placeholder="Nombre Completo"
+            class="w-full p-3 text-gray-700 border rounded-lg focus:outline-none focus:ring"
+          />
+          <div
+            *ngIf="
+              registerForm.get('name')?.invalid &&
+              (registerForm.get('name')?.dirty ||
+                registerForm.get('name')?.touched)
+            "
+            class="text-red-500 text-sm mt-1"
+          >
+            <div *ngIf="registerForm.get('name')?.hasError('required')">
+              El nombre es obligatorio.
+            </div>
+          </div>
+        </div>
+        <div>
+          <input
+            type="email"
+            formControlName="email"
+            placeholder="Email"
+            class="w-full p-3 text-gray-700 border rounded-lg focus:outline-none focus:ring"
+          />
+          <div
+            *ngIf="
+              registerForm.get('email')?.invalid &&
+              (registerForm.get('email')?.dirty ||
+                registerForm.get('email')?.touched)
+            "
+            class="text-red-500 text-sm mt-1"
+          >
+            <div *ngIf="registerForm.get('email')?.hasError('required')">
+              El email es obligatorio.
+            </div>
+            <div *ngIf="registerForm.get('email')?.hasError('email')">
+              El email no es válido.
+            </div>
+          </div>
+        </div>
+        <div>
+          <select
+            formControlName="persona"
+            class="w-full p-3 text-gray-700 border rounded-lg focus:outline-none focus:ring"
+          >
+            <option value="" disabled selected>Tipo de persona</option>
+            <option value="natural">Natural</option>
+            <option value="juridica">Jurídica</option>
+          </select>
+          <div
+            *ngIf="
+              registerForm.get('persona')?.invalid &&
+              (registerForm.get('persona')?.dirty ||
+                registerForm.get('persona')?.touched)
+            "
+            class="text-red-500 text-sm mt-1"
+          >
+            <div *ngIf="registerForm.get('persona')?.hasError('required')">
+              El tipo de persona es obligatorio.
+            </div>
+          </div>
+        </div>
+        <div>
+          <input
+            type="text"
+            formControlName="username"
+            placeholder="Nombre de usuario"
+            class="w-full p-3 text-gray-700 border rounded-lg focus:outline-none focus:ring"
+          />
+          <div
+            *ngIf="
+              registerForm.get('username')?.invalid &&
+              (registerForm.get('username')?.dirty ||
+                registerForm.get('username')?.touched)
+            "
+            class="text-red-500 text-sm mt-1"
+          >
+            <div *ngIf="registerForm.get('username')?.hasError('required')">
+              El nombre de usuario es obligatorio.
+            </div>
+          </div>
+        </div>
+        <div>
+          <input
+            type="password"
+            formControlName="password"
+            placeholder="Contraseña"
+            class="w-full p-3 text-gray-700 border rounded-lg focus:outline-none focus:ring"
+          />
+          <div
+            *ngIf="
+              registerForm.get('password')?.invalid &&
+              (registerForm.get('password')?.dirty ||
+                registerForm.get('password')?.touched)
+            "
+            class="text-red-500 text-sm mt-1"
+          >
+            <div *ngIf="registerForm.get('password')?.hasError('required')">
+              La contraseña es obligatoria.
+            </div>
+            <div *ngIf="registerForm.get('password')?.hasError('minlength')">
+              La contraseña debe tener al menos 6 caracteres.
+            </div>
+          </div>
+        </div>
+        <div>
+          <input
+            type="password"
+            formControlName="passwordConfirm"
+            placeholder="Confirmar Contraseña"
+            class="w-full p-3 text-gray-700 border rounded-lg focus:outline-none focus:ring"
+          />
+          <div
+            *ngIf="
+              registerForm.get('passwordConfirm')?.invalid &&
+              (registerForm.get('passwordConfirm')?.dirty ||
+                registerForm.get('passwordConfirm')?.touched)
+            "
+            class="text-red-500 text-sm mt-1"
+          >
+            <div
+              *ngIf="registerForm.get('passwordConfirm')?.hasError('required')"
+            >
+              La confirmación de la contraseña es obligatoria.
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center">
+          <input
+            type="checkbox"
+            formControlName="terms"
+            id="terms"
+            class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+          />
+          <label for="terms" class="ml-2 block text-sm text-gray-900">
+            Aceptar términos y condiciones
+          </label>
+        </div>
+        <div>
+          <button
+            type="submit"
+            class="w-full px-4 py-2 tracking-wide text-white transition-colors duration-200 transform bg-indigo-500 rounded-lg hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700"
+          >
+            Registro
+          </button>
+        </div>
+        <div class="text-center">
+          <a href="#" class="text-indigo-600 hover:underline">
+            ¿Tienes una cuenta? Acceso
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
