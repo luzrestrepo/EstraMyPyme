@@ -7,7 +7,6 @@ import {
   Validators,
 } from '@angular/forms';
 import { passwordConfirmValidator } from '../shared/password-confirm-directive';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
