@@ -1,4 +1,3 @@
-/* Reset básico y configuración global */
 * {
   margin: 0;
   padding: 0;
@@ -15,6 +14,22 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+@keyframes backgroundScroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+/* Animación para fondo en vista responsive */
+@media (max-width: 1024px) {
+  body {
+    animation: backgroundScroll 120s linear infinite; /*  duración */
+  }
 }
 
 .wrapper {
@@ -64,7 +79,7 @@ body {
   color: #fbf8f8;
   display: inline-block;
   margin-right: 30px;
-  font-size: 22px; /* sajustar el tamaño de los iconos */
+  font-size: 22px; /* ajustar el tamaño de los iconos */
 }
 
 .link:hover,

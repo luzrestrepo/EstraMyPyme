@@ -45,30 +45,36 @@
       <div class="form-box">
         <div class="login-container">
           <header>Acceso</header>
-          <div class="input-box">
-            <input
-              type="text"
-              class="input-field"
-              placeholder="Nombre de usuario"
-            />
-            <i class="bx bx-user"></i>
-          </div>
-          <div class="input-box">
-            <input
-              type="password"
-              class="input-field"
-              placeholder="Contraseña"
-            />
-            <i class="bx bx-lock-alt"></i>
-          </div>
-          <div class="input-box">
-            <input type="submit" class="submit" value="Iniciar sesión" />
-          </div>
+          <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+            <div class="input-box">
+              <input
+                type="text"
+                class="input-field"
+                placeholder="Nombre de usuario"
+                [(ngModel)]="username"
+                name="username"
+                required
+              />
+              <i class="bx bx-user"></i>
+            </div>
+            <div class="input-box">
+              <input
+                type="password"
+                class="input-field"
+                placeholder="Contraseña"
+                [(ngModel)]="password"
+                name="password"
+                required
+              />
+              <i class="bx bx-lock-alt"></i>
+            </div>
+            <div class="input-box">
+              <button type="submit" class="submit">Iniciar sesión</button>
+            </div>
+          </form>
           <div class="top">
             <span>¿No tienes una cuenta? <a (click)="navigateToRegister()">Registrarse</a></span>
           </div>
         </div>
       </div>
-    </div>
-  </body>
-</html>
+      

@@ -8,6 +8,8 @@ import {
 } from '@angular/forms';
 import { passwordConfirmValidator } from '../shared/password-confirm-directive';
 import { Router } from '@angular/router';
+import { User } from '../models/user.service';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-register',
@@ -33,6 +35,11 @@ export class RegisterComponent {
     { validators: passwordConfirmValidator }
   );
 
+  constructor (private userService: UsersService, private router: Router){
+
+
+  }
+
   get name() {
     return this.registerForm.get('name');
   }
@@ -40,6 +47,8 @@ export class RegisterComponent {
     return this.registerForm.get('email');
   }
   register() {
+    this.userService.addUser(this.registerForm.value as User)
     console.log(this.registerForm.value);
+    this.router.navigate(['/login'])
   }
 }
