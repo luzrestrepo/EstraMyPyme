@@ -1,0 +1,14 @@
+/* Estilos para el footer */
+footer {
+    background-color: var(--negro);
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+    margin-top: auto;
+    flex-direction: row;
+}
+
+footer .svg-icon {
+    padding: 0.5rem; 
+    margin:auto
+}

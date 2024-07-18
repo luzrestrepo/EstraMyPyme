@@ -11,7 +11,7 @@
     <title>EstraPymes</title>
   </head>
   <body>
-    <div class="wrapper">
+    <!-- <div class="wrapper">
       <nav class="nav">
         <div class="nav-somos">
           <a (click)="navigateToHome()"><p>Quienes somos</p></a>
@@ -41,40 +41,42 @@
         <div class="nav-boton">
           <button class="btn" id="registerBtn" (click)="register()">Registrarse</button>
         </div>        
-      </nav>
-      <div class="form-box">
-        <div class="login-container">
-          <header>Acceso</header>
-          <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-            <div class="input-box">
-              <input
-                type="text"
-                class="input-field"
-                placeholder="Nombre de usuario"
-                [(ngModel)]="username"
-                name="username"
-                required
-              />
-              <i class="bx bx-user"></i>
+      </nav> -->
+        <div class="wrapper">
+          <div class="form-box">
+          <div class="login-container">
+            <header>Acceso</header>
+            <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+              <div class="input-box">
+                <input
+                  type="text"
+                  class="input-field"
+                  placeholder="Nombre de usuario"
+                  [(ngModel)]="username"
+                  name="username"
+                  required
+                />
+                <i class="bx bx-user"></i>
+              </div>
+              <div class="input-box">
+                <input
+                  type="password"
+                  class="input-field"
+                  placeholder="Contraseña"
+                  [(ngModel)]="password"
+                  name="password"
+                  required
+                />
+                <i class="bx bx-lock-alt"></i>
+              </div>
+              <div class="input-box">
+                <button type="submit" class="submit">Iniciar sesión</button>
+              </div>
+            </form>
+            <div class="top">
+              <span><a (click)="navigateToRegister()"> ¿No tienes una cuenta?  Registrarse</a></span>
             </div>
-            <div class="input-box">
-              <input
-                type="password"
-                class="input-field"
-                placeholder="Contraseña"
-                [(ngModel)]="password"
-                name="password"
-                required
-              />
-              <i class="bx bx-lock-alt"></i>
-            </div>
-            <div class="input-box">
-              <button type="submit" class="submit">Iniciar sesión</button>
-            </div>
-          </form>
-          <div class="top">
-            <span>¿No tienes una cuenta? <a (click)="navigateToRegister()">Registrarse</a></span>
           </div>
         </div>
       </div>
-      
+  

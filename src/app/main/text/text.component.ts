@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-text',
   standalone: true,
-  imports: [RouterOutlet,TextComponent],
+  imports: [TextComponent,RouterOutlet],
   templateUrl: './text.component.html',
   styleUrl: './text.component.css'
 })
