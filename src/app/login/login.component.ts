@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { AuthService } from '../services/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ LoginComponent,FormsModule,LoginComponent,RouterModule],
+  imports: [ LoginComponent,FormsModule,LoginComponent,RouterModule,CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
@@ -20,34 +21,28 @@ export class LoginComponent {
     
   }
 
-  login(form: any) {
-    
+
+  login() {
     console.log('Usuario:', this.username);
     console.log('Contraseña:', this.password);
 
-    let islogin= false
+    let isLogin = false;
 
-    try{
-      islogin = this.authservice.login(this.username, this.password)
-    } catch(error){
-      console.log(error)
-      this.errorMesage =(error as any). message
+    try {
+      isLogin = this.authservice.login(this.username, this.password);
+      if (isLogin) {
+        this.router.navigate(['/home']);
+      } else {
+        this.errorMesage = 'Nombre de usuario o contraseña incorrecto';
+      }
+    } catch (error) {
+      console.log(error);
+      this.errorMesage = (error as any).message;
     }
   }
 
-
-  register() {
-    this.router.navigate(['/register']);
-  }
-
-  navigateToRegister() {
-    this.router.navigate(['/register']);
-  }
-
-  navigateToHome() {
-    this.router.navigate(['/footer']);
-  }
-  
-
-  
 }
+
+  
+
+  
