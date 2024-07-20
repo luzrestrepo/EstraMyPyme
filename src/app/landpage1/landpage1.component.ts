@@ -1,11 +1,11 @@
 import { Component  } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule, RouterOutlet } from '@angular/router';
 
 
 @Component({
   selector: 'app-landpage1',
   standalone: true,
-  imports: [Landpage1Component,RouterOutlet],
+  imports: [Landpage1Component,RouterOutlet,RouterModule],
   templateUrl: './landpage1.component.html',
   styleUrl: './landpage1.component.css',
   
