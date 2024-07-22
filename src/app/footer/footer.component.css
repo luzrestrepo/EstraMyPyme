@@ -2,13 +2,6 @@
 footer {
     background-color: var(--negro);
     color: #fff;
-    padding: 1em 0;
-    text-align: center;
-    margin-top: auto;
-    flex-direction: row;
+    padding: 1%;
 }
 
-footer .svg-icon {
-    padding: 0.5rem; 
-    margin:auto
-}
