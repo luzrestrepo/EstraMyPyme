@@ -1,82 +1,54 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <title>EstraPymes</title>
-  </head>
-  <body>
-    <!-- <div class="wrapper">
-      <nav class="nav">
-        <div class="nav-somos">
-          <a (click)="navigateToHome()"><p>Quienes somos</p></a>
-        </div>
-        <div class="nav-menu" id="navMenu">
-          <ul>
-            <li>
-              <a
-                href="https://www.instagram.com/nodo.eafit/"
-                class="link"
-                target="_blank"
-                ><i class="bx bxl-instagram"></i
-              ></a>
-            </li>
-            <li>
-              <a href="https://web.telegram.org/a/" class="link" target="_blank"
-                ><i class="bx bxl-telegram"></i
-              ></a>
-            </li>
-            <li>
-              <a href="https://web.whatsapp.com/" class="link" target="_blank"
-                ><i class="bx bxl-whatsapp"></i
-              ></a>
-            </li>
-          </ul>
-        </div>
-        <div class="nav-boton">
-          <button class="btn" id="registerBtn" (click)="register()">Registrarse</button>
-        </div>        
-      </nav> -->
-        <div class="wrapper">
-          <div class="form-box">
-          <div class="login-container">
-            <header>Acceso</header>
-            <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-              <div class="input-box">
-                <input
-                  type="text"
-                  class="input-field"
-                  placeholder="Nombre de usuario"
-                  [(ngModel)]="username"
-                  name="username"
-                  required
-                />
-                <i class="bx bx-user"></i>
-              </div>
-              <div class="input-box">
-                <input
-                  type="password"
-                  class="input-field"
-                  placeholder="Contraseña"
-                  [(ngModel)]="password"
-                  name="password"
-                  required
-                />
-                <i class="bx bx-lock-alt"></i>
-              </div>
-              <div class="input-box">
-                <button type="submit" class="submit">Iniciar sesión</button>
-              </div>
-            </form>
-            <div class="top">
-              <span><a routerLink="/register"> ¿No tienes una cuenta?  Registrarse</a></span>
+<body class="min-h-screen background-gradient flex items-center justify-center">
+    <div class="relative flex flex-col sm:flex-row justify-center w-full max-w-6xl p-8">
+        <div class="flex-col flex self-center lg:px-16 sm:max-w-4xl xl:max-w-lg z-10 w-1/2">
+            <div class="self-start hidden lg:flex flex-col text-gray-300">
+                <h1 class="my-3 font-semibold text-5xl">Bienvenido a Estramypyme</h1>
+                <p class="pr-4 text-lg opacity-75">
+                    Descubre herramientas y estrategias innovadoras para llevar tu empresa al siguiente nivel.
+                </p>
             </div>
-          </div>
         </div>
-      </div>
-  
+        <div class="flex justify-center self-center z-10 w-full max-w-lg bg-white p-16 shadow-lg rounded-lg">
+            <div class="w-full">
+                <h3 class="font-semibold text-3xl text-gray-800 text-center">Acceso</h3>
+                <form class="mt-6 space-y-6" (ngSubmit)="login()">
+                    <div *ngIf="errorMesage" class="text-red-600 text-center">
+                        {{errorMesage}}
+                    </div>
+                    <div>
+                        <input
+                            type="text"
+                            name="username"
+                            id="username"
+                            placeholder="Usuario"
+                            [(ngModel)]="username"
+                            class="w-full p-4 text-lg text-gray-700 border border-gray-300 rounded-lg focus:outline-none focus:ring-indigo-500"
+                        />
+                    </div>
+                    <div class="relative">
+                        <input
+                            type="password"
+                            name="password"
+                            placeholder="Contraseña"
+                            [(ngModel)]="password"
+                            class="w-full p-4 text-lg text-gray-700 border border-gray-300 rounded-lg focus:outline-none focus:ring-indigo-500"
+                        />
+                    </div>
+                    <div>
+                        <button
+                            type="submit"
+                            class="w-full px-4 py-4 tracking-wide text-lg text-white transition-colors duration-200 transform bg-indigo-500 rounded-lg hover:bg-indigo-700 focus:outline-none focus:bg-indigo-700">
+                            Iniciar sesión
+                        </button>
+                    </div>
+                </form>
+                <p class="mt-6 text-center text-gray-500">No tienes una cuenta? 
+                    <a routerLink="/register" class="text-lg text-indigo-600 hover:text-indigo-700">Registrate</a>
+                </p>
+            </div>
+        </div>
+    </div>
+    <svg class="absolute bottom-0 left-0 w-full h-auto" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill="#fff" fill-opacity="1" d="M0,48L40,90.7C80,133,160,219,240,245.3C320,272,400,240,480,202.7C560,165,640,123,720,122.7C800,123,880,165,960,202.7C1040,240,1120,272,1200,261.3C1280,251,1360,197,1400,170.7L1440,144L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z"></path>
+    </svg>
+</body>
