@@ -16,8 +16,9 @@ export class AuthService {
     
     return true;
   }
+
+  isAdmin(username: string, password: string): boolean {
+    return username === 'admin' && password === '123456';
+  }
 }
-
-
-  
 

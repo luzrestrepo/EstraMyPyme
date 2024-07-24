@@ -7,9 +7,9 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ LoginComponent,FormsModule,LoginComponent,RouterModule,CommonModule],
+  imports: [FormsModule, RouterModule, CommonModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css',
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
 
@@ -17,20 +17,16 @@ export class LoginComponent {
   password: string = '';
   errorMesage: string = '';
 
-  constructor(private authservice: AuthService,private router: Router){
-    
-  }
-
+  constructor(private authservice: AuthService, private router: Router) {}
 
   login() {
     console.log('Usuario:', this.username);
     console.log('Contraseña:', this.password);
 
-    let isLogin = false;
-
     try {
-      isLogin = this.authservice.login(this.username, this.password);
-      if (isLogin) {
+      if (this.authservice.isAdmin(this.username, this.password)) {
+        this.router.navigate(['/admin']);
+      } else if (this.authservice.login(this.username, this.password)) {
         this.router.navigate(['/home']);
       } else {
         this.errorMesage = 'Nombre de usuario o contraseña incorrecto';
@@ -40,9 +36,4 @@ export class LoginComponent {
       this.errorMesage = (error as any).message;
     }
   }
-
 }
-
-  
-
-  
