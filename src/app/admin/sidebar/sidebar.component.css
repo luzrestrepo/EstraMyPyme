@@ -1,0 +1,45 @@
+.sidebar {
+  width: 16rem;
+  background-color: var(--indigo);
+  color: white;
+  padding: 1rem;
+}
+
+.sidebar img {
+  border-radius: 50%; /* Make the logo circular if it's an avatar */
+  box-shadow: 0 0 10px rgba(83, 43, 69, 0.2); /* Add a slight shadow */
+}
+
+app-sidebar {
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 14rem; /* Ancho fijo del Sidebar */
+}
+
+/* Asegura que el Sidebar mantenga su estilo y tamaño */
+app-sidebar {
+  flex: 0 0 auto; /* Ajusta el tamaño del Sidebar a su contenido */
+}
+
+/* Estilo para el modo claro */
+body {
+  background-color: white;
+  color: black;
+}
+
+/* Estilo para el modo oscuro */
+body.dark {
+  background-color: #121212;
+  color: white;
+}
+
+/* Estilo adicional para otros elementos */
+.group:hover .dark {
+  background-color: gray;
+}
+
+.layout-container {
+  background-color: var(--negro);
+}
