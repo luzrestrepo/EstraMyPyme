@@ -7,14 +7,14 @@ import {
   Validators,
 } from '@angular/forms';
 import { passwordConfirmValidator } from '../shared/password-confirm-directive';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { User } from '../models/user.service';
 import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, RouterModule],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
 })
@@ -50,5 +50,5 @@ export class RegisterComponent {
     this.userService.addUser(this.registerForm.value as User)
     console.log(this.registerForm.value);
     this.router.navigate(['/login'])
-  }
+  }
 }
