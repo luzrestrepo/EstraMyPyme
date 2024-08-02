@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-text',
   standalone: true,
-  imports: [TextComponent,RouterOutlet],
+  imports: [TextComponent,RouterModule],
   templateUrl: './text.component.html',
   styleUrl: './text.component.css'
 })
