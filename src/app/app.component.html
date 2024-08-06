@@ -2,10 +2,11 @@
 <router-outlet *ngIf="!isAdmin"></router-outlet>
 
 <div *ngIf="isAdmin">
-  <app-sidebar class="w-1/5 bg-gray-800 text-white"></app-sidebar>
+  <app-sidebar class="w-1/5 text-white bg-gray-800"></app-sidebar>
   <div class="flex-1 p-4 bg-gray-100">
     <router-outlet></router-outlet>
   </div>
 </div>
 
-<app-footer></app-footer>
+<!-- Mostrar el footer solo si isAdmin es falso -->
+<app-footer *ngIf="!isAdmin"></app-footer>

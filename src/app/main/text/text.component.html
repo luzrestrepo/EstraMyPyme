@@ -1,88 +1,53 @@
 <header>
-  <div
-    class="w-full bg-center bg-cover h-96"
-    style="background-image: url(/portada.avif)"
-  >
-    <div
-      class="flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-50"
-    >
+  <div class="w-full bg-center bg-cover h-96" style="background-image: url(/portada.avif)">
+    <div class="flex items-center justify-center w-full h-full bg-gray-900 bg-opacity-50">
       <div class="text-center">
         <h1 class="text-2xl font-semibold text-white uppercase lg:text-3xl">
           Metodología fácil y ágil para diseñar una estrategia competitiva
         </h1>
-        <button
-          class="w-full px-4 py-2 mt-4 text-sm font-medium text-white uppercase transition-colors duration-200 transform bg-blue-600 rounded-md lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500"
-        >
+        <button class="w-full px-4 py-2 mt-4 text-sm font-medium text-white uppercase transition-colors duration-200 transform bg-blue-600 rounded-md lg:w-auto hover:bg-blue-500 focus:outline-none focus:bg-blue-500">
           Inicia tu test
         </button>
       </div>
     </div>
   </div>
 </header>
-
-<div class="container mx-auto px-4">
+<div class="container px-4 mx-auto">
   <main class="mt-0">
-    <div class="flex flex-wrap md:flex-no-wrap space-x-0 md:space-x-6 mb-16">
-      <section>
-        <div class="bg-transparent text-white py-8">
-          <div
-            class="container mx-auto flex flex-col items-start md:flex-row my-12 md:my-24"
-          >
-            <div
-              class="flex flex-col w-full sticky md:top-36 lg:w-1/3 mt-2 md:mt-12 px-8"
-            >
+    <div class="flex flex-wrap mb-16 md:space-x-6">
+      <section class="w-full">
+        <div class="py-8 text-white bg-transparent">
+          <div class="container flex flex-col items-start mx-auto my-12 md:flex-row md:my-24">
+            <div class="sticky flex flex-col w-full px-8 mt-2 md:top-36 lg:w-1/3 md:mt-12">
               <p class="ml-2 text-yellow-300 uppercase tracking-loose">
                 Estra Mi Pyme
               </p>
-              <p
-                class="text-3xl md:text-4xl leading-normal md:leading-relaxed mb-2"
-              >
+              <p class="mb-2 text-3xl font-bold leading-normal md:text-4xl md:leading-relaxed">
                 Etapas del diagnóstico
               </p>
-              <p class="text-sm md:text-base text-gray-50 mb-4">
+              <p class="mb-4 text-sm md:text-base text-gray-50">
                 El diagnóstico de Estramipyme, creado en 2019, incluye explorar,
                 conocer, analizar e integrar. Mejorado hasta febrero de 2023
                 para evaluar tendencias, identificar riesgos y oportunidades, y
                 analizar capacidades internas.
               </p>
-              <a
-                routerLink="/register"
-                class="bg-transparent mr-auto hover:bg-yellow-300 text-yellow-300 hover:text-white rounded shadow hover:shadow-lg py-2 px-4 border border-yellow-300 hover:border-transparent"
-              >
-                Explora ahora</a
-              >
+              <a routerLink="/register" class="px-4 py-2 mr-auto text-yellow-300 bg-transparent border border-yellow-300 rounded shadow hover:bg-yellow-300 hover:text-white hover:shadow-lg hover:border-transparent">
+                Explora ahora
+              </a>
             </div>
-            <div class="ml-0 md:ml-12 lg:w-2/3 sticky">
-              <div class="container mx-auto w-full h-full">
-                <div class="relative wrap overflow-hidden p-10 h-full">
-                  <div
-                    class="border-2-2 border-yellow-555 absolute h-full border"
-                    style="
-                      right: 50%;
-                      border: 2px solid #ffc100;
-                      border-radius: 1%;
-                    "
-                  ></div>
-                  <div
-                    class="border-2-2 border-yellow-555 absolute h-full border"
-                    style="
-                      left: 50%;
-                      border: 2px solid #ffc100;
-                      border-radius: 1%;
-                    "
-                  ></div>
-                  <div
-                    class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline"
-                  >
+            <div class="sticky ml-0 md:ml-12 lg:w-2/3">
+              <div class="container w-full h-full mx-auto">
+                <div class="relative h-full p-10 overflow-hidden wrap">
+                  <div class="absolute h-full border border-2-2 border-yellow-555" style="right: 50%; border: 2px solid #ffc100; border-radius: 1%;"></div>
+                  <div class="absolute h-full border border-2-2 border-yellow-555" style="left: 50%; border: 2px solid #ffc100; border-radius: 1%;"></div>
+                  <div class="flex flex-row-reverse items-center justify-between w-full mb-8 left-timeline">
                     <div class="order-1 w-5/12"></div>
                     <div class="order-1 w-5/12 px-1 py-4 text-right">
                       <p class="mb-3 text-base text-yellow-300">Enero, 2019</p>
-                      <h4 class="mb-3 font-bold text-lg md:text-2xl">
+                      <h4 class="mb-3 text-lg font-bold md:text-2xl">
                         Explorar
                       </h4>
-                      <p
-                        class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100"
-                      >
+                      <p class="text-sm leading-snug text-opacity-100 md:text-base text-gray-50">
                         Reconocer los datos y características más importantes
                         del negocio e investigar en internet sobre las
                         tendencias mundiales que puedan afectar el negocio en el
@@ -90,75 +55,76 @@
                       </p>
                     </div>
                   </div>
-                  <div
-                    class="mb-8 flex justify-between items-center w-full right-timeline"
-                  >
+                  <div class="flex items-center justify-between w-full mb-8 right-timeline">
                     <div class="order-1 w-5/12"></div>
                     <div class="order-1 w-5/12 px-1 py-4 text-left">
                       <p class="mb-3 text-base text-yellow-300">Mar, 2021</p>
-                      <h4 class="mb-3 font-bold text-lg md:text-2xl">
+                      <h4 class="mb-3 text-lg font-bold md:text-2xl">
                         Integrar
                       </h4>
-                      <p
-                        class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100"
-                      >
+                      <p class="text-sm leading-snug text-opacity-100 md:text-base text-gray-50">
                         Aplicar las cuatro herramientas de estrategia sugeridas
                         para tener una visión integral del negocio.
                       </p>
                     </div>
                   </div>
-                  <div
-                    class="mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline"
-                  >
+                  <div class="flex flex-row-reverse items-center justify-between w-full mb-8 left-timeline">
                     <div class="order-1 w-5/12"></div>
                     <div class="order-1 w-5/12 px-1 py-4 text-right">
                       <p class="mb-3 text-base text-yellow-300">Feb, 2023</p>
-                      <h4 class="mb-3 font-bold text-lg md:text-2xl">
+                      <h4 class="mb-3 text-lg font-bold md:text-2xl">
                         Analizar
                       </h4>
-                      <p
-                        class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100"
-                      >
+                      <p class="text-sm leading-snug text-opacity-100 md:text-base text-gray-50">
                         Identificar los riesgos y oportunidades que ofrecen las
                         tendencias mundiales y el sector analizado; priorizar el
                         principal riesgo y la principal oportunidad.
                       </p>
                     </div>
                   </div>
-                  <div
-                    class="mb-8 flex justify-between items-center w-full right-timeline"
-                  >
+                  <div class="flex items-center justify-between w-full mb-8 right-timeline">
                     <div class="order-1 w-5/12"></div>
                     <div class="order-1 w-5/12 px-1 py-4">
                       <p class="mb-3 text-base text-yellow-300">Feb, 2023</p>
-                      <h4 class="mb-3 font-bold text-lg md:text-2xl text-left">
+                      <h4 class="mb-3 text-lg font-bold text-left md:text-2xl">
                         Conocer
                       </h4>
-                      <p
-                        class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100"
-                      >
+                      <p class="text-sm leading-snug text-opacity-100 md:text-base text-gray-50">
                         Conversar con personas que conozcan del negocio y del
                         sector.
                       </p>
                     </div>
                   </div>
                 </div>
-                <img
-                  class="mx-auto -mt-36 md:-mt-36"
-                  src="https://user-images.githubusercontent.com/54521023/116968861-ef21a000-acd2-11eb-95ac-a34b5b490265.png"
-                />
+                <img class="mx-auto -mt-36 md:-mt-36" src="https://user-images.githubusercontent.com/54521023/116968861-ef21a000-acd2-11eb-95ac-a34b5b490265.png" />
               </div>
             </div>
           </div>
         </div>
       </section>
-      <div
-        class="mb-4 lg:mb-0 p-4 lg:p-0 w-full md:w-4/7 relative rounded block"
-      >
-        <video class="w-full shadow-8 py-8" loop controls muted>
-          <source src="/estrategia (1080p) (1).mp4" type="video/mp4" />
-        </video>
-      </div>
+      <section class="w-full">
+        <div class="px-4 py-16 mx-auto max-w-screen sm:px-8 sm:py-20 lg:px-12 lg:py-24">
+            <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
+                <div class="relative h-screen overflow-hidden rounded-lg sm:h-96 lg:order-last lg:h-full">
+                    <video class="w-full shadow-8" loop controls muted>
+                        <source src="/estrategia (1080p) (1).mp4" type="video/mp4" />
+                    </video>
+                </div>
+                <div class="lg:py-32">
+                    <h2 class="text-3xl font-bold text-white sm:text-4xl">
+                        Conoce más sobre Estra mi Pyme
+                    </h2>
+                    <p class="mt-6 text-white">
+                        Estramipyme ha ayudado a las empresas mediante procesos de cocreación y consultoría. Los estudiantes y profesores de la Escuela de Administración de la Universidad EAFIT colaboran con micro y pequeñas empresas para formular estrategias competitivas, mejorar su diferenciación en el mercado y fortalecer sus recursos y capacidades.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+      <div class="fixed bottom-0 right-0 mb-4 mr-4 text-center">
+        <p class="mb-2 font-bold text-white">Descarga ahora</p>
+        <img src="/Libro.PNG" routerLink="/register" class="w-16 h-16 mb-24 rounded-md shadow-lg md:w-32 md:h-32" />
     </div>
   </main>
 </div>
