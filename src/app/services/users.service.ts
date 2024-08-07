@@ -17,4 +17,11 @@ export class UsersService {
   findUser(username: string){
     return this.users.find((user) => user.username === username)
   }
+
+  updateUser(updatedUser: User): void {
+    const index = this.users.findIndex(user => user.username === updatedUser.username);
+    if (index !== -1) {
+      this.users[index] = updatedUser;
+    }
+  }
 }

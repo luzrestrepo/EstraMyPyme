@@ -27,7 +27,7 @@ export class LoginComponent {
       if (this.authservice.isAdmin(this.username, this.password)) {
         this.router.navigate(['/admin']);
       } else if (this.authservice.login(this.username, this.password)) {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/user']);
       } else {
         this.errorMesage = 'Nombre de usuario o contraseña incorrecto';
       }
