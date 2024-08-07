@@ -1,62 +1,79 @@
-<div class="pt-16 pl-64 bg-gray-100 min-h-screen">
-  <div class="p-4">
-    <h1 class="text-2xl font-bold mb-4">Usuarios</h1>
-    <div class="bg-white p-6 rounded-lg shadow-md">
-      <div class="overflow-x-auto">
-        <table class="min-w-full divide-y divide-gray-200">
-          <thead class="bg-gray-50">
-            <tr>
-              <th
-                scope="col"
-                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-              >
-                Nombre
-              </th>
-              <th
-                scope="col"
-                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-              >
-                Email
-              </th>
-              <th
-                scope="col"
-                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-              >
-                Rol
-              </th>
-              <th scope="col" class="relative px-6 py-3">
-                <span class="sr-only">Editar</span>
-              </th>
-            </tr>
-          </thead>
-          <tbody class="bg-white divide-y divide-gray-200">
-            <tr *ngFor="let user of users">
-              <td class="px-6 py-4 whitespace-nowrap">
-                <div class="flex items-center">
-                  <div class="ml-4">
-                    <div class="text-sm font-medium text-gray-900">
-                      {{ user.name }}
-                    </div>
-                  </div>
-                </div>
-              </td>
-              <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900">{{ user.email }}</div>
-              </td>
-              <td class="px-6 py-4 whitespace-nowrap">
-                <div class="text-sm text-gray-900">{{ user.role }}</div>
-              </td>
-              <td
-                class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
-              >
-                <a routerLink="admin/users" class="text-indigo-600 hover:text-indigo-900"
-                  >Editar</a
-                >
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+<div class="min-h-screen pt-16 pl-64 bg-gray-100">
+  <h1 class="mb-8 text-3xl font-bold text-center text-black">Listado de Usuarios</h1>
+
+  <div class="flex justify-end mb-8 mr-8 space-x-4">
+    <div>
+      <label for="filterRole" class="block mb-1 text-black">Filtrar por Rol</label>
+      <select id="filterRole" [(ngModel)]="filterRole" name="filterRole" class="w-48 px-3 py-2 text-black border rounded-lg">
+        <option value="">Todos los Roles</option>
+        <option value="Profesor">Profesor</option>
+        <option value="Estudiante">Estudiante</option>
+      </select>
+    </div>
+    <div>
+      <label for="filterEmpresa" class="block mb-1 text-black">Filtrar por Empresa</label>
+      <select id="filterEmpresa" [(ngModel)]="filterEmpresa" name="filterEmpresa" class="w-48 px-3 py-2 text-black border rounded-lg">
+        <option value="">Todas las Empresas</option>
+        <option *ngFor="let empresa of uniqueEmpresas" [value]="empresa">{{ empresa }}</option>
+      </select>
+    </div>
+  </div>
+
+  <table class="min-w-full overflow-hidden bg-white rounded-lg shadow-md">
+    <thead class="bg-gray-200">
+      <tr>
+        <th class="px-6 py-3 leading-4 tracking-wider text-left text-blue-600 border-b-2 border-gray-300">Nombre</th>
+        <th class="px-6 py-3 leading-4 tracking-wider text-left text-blue-600 border-b-2 border-gray-300">Email</th>
+        <th class="px-6 py-3 leading-4 tracking-wider text-left text-blue-600 border-b-2 border-gray-300">Rol</th>
+        <th class="px-6 py-3 leading-4 tracking-wider text-left text-blue-600 border-b-2 border-gray-300">Empresa Asignada</th>
+        <th class="px-6 py-3 border-b-2 border-gray-300"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of filteredUsers(); let i = index" class="hover:bg-gray-100">
+        <td class="px-6 py-4 text-black border-b border-gray-300">{{ user.name }}</td>
+        <td class="px-6 py-4 text-black border-b border-gray-300">{{ user.email }}</td>
+        <td class="px-6 py-4 text-black border-b border-gray-300">{{ user.role }}</td>
+        <td class="px-6 py-4 text-black border-b border-gray-300">{{ user.empresa }}</td>
+        <td class="px-6 py-4 text-black border-b border-gray-300">
+          <div class="flex space-x-3">
+            <button class="px-3 py-1 text-white bg-green-500 rounded-lg hover:bg-green-600" (click)="toggleModal()">Crear</button>
+            <button class="px-3 py-1 text-white bg-red-500 rounded-lg hover:bg-red-600" (click)="deleteUser(i)">Eliminar</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div *ngIf="showModal" class="fixed inset-0 z-50 flex items-center justify-center overflow-auto bg-black bg-opacity-50">
+    <div class="w-full max-w-md p-6 bg-white rounded-lg">
+      <h2 class="mb-4 text-xl font-bold text-black">Agregar Usuario</h2>
+      <form (ngSubmit)="addUser()" class="space-y-4">
+        <div>
+          <label for="name" class="block mb-1 text-black">Nombre</label>
+          <input id="name" [(ngModel)]="newUser.name" name="name" type="text" class="w-full px-3 py-2 text-black border rounded-lg" required />
+        </div>
+        <div>
+          <label for="email" class="block mb-1 text-black">Email</label>
+          <input id="email" [(ngModel)]="newUser.email" name="email" type="email" class="w-full px-3 py-2 text-black border rounded-lg" required />
+        </div>
+        <div>
+          <label for="empresa" class="block mb-1 text-black">Empresa</label>
+          <input id="empresa" [(ngModel)]="newUser.empresa" name="empresa" type="text" class="w-full px-3 py-2 text-black border rounded-lg" required />
+        </div>
+        <div>
+          <label for="role" class="block mb-1 text-black">Rol</label>
+          <select id="role" [(ngModel)]="newUser.role" name="role" class="w-full px-3 py-2 text-black border rounded-lg" required>
+            <option value="" disabled selected>Seleccione un rol</option>
+            <option class="text-black" value="Profesor">Profesor</option>
+            <option class="text-black" value="Estudiante">Estudiante</option>
+          </select>
+        </div>
+        <div class="flex justify-end space-x-2">
+          <button type="button" class="px-3 py-1 text-white bg-gray-500 rounded-lg hover:bg-gray-600" (click)="toggleModal()">Cancelar</button>
+          <button type="submit" class="px-3 py-1 text-white bg-blue-500 rounded-lg hover:bg-blue-600">Agregar</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
