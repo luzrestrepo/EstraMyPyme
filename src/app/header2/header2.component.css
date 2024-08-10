@@ -61,12 +61,16 @@ nav ul li {
 }
 
 .nav-list {
-    justify-content: space-around;
+    justify-content: flex-end;
     align-items: center;
 }
 
 #last-item {
     padding-right: 1rem;
+}
+
+.contenedor-iconos {
+    width: 280px;
 }
 
 .contenedor-lista {
@@ -83,7 +87,13 @@ nav ul li {
 
 .icon-tabler {
     min-width: 35px;
+    transition: transform 0.3s ease, stroke 0.3s ease;
 }
+
+.contenedor-lista:hover .icon-tabler {
+    transform: scale(1.1) rotate(10deg); /* O cualquier otra animación */
+    stroke: var(--morado);
+  }
 
 .contenedor-logo {
     display: flex;
@@ -114,6 +124,18 @@ nav ul li {
     font-size: 2rem;
     font-weight: bold;
     margin: 0 auto;
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+.title::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px; /* Espesor opcional del borde */
+    background: transparent;
 }
 
 svg {
@@ -288,8 +310,12 @@ svg {
         nav ul {
             display: flex;
             flex-direction: row;
-            justify-content: flex-start;
+            justify-content: flex-end   ;
             min-width: 0px;
+        }
+
+        .contenedor-iconos {
+            width: 120px;
         }
 
         .titulo {

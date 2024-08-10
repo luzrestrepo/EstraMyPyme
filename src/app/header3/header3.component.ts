@@ -4,15 +4,15 @@ import { InfoComponent } from '../info/info.component';
 
 
 @Component({
-  selector: 'app-landpage1',
+  selector: 'app-header3',
   standalone: true,
-  imports: [Landpage1Component,RouterOutlet,RouterModule, InfoComponent],
-  templateUrl: './landpage1.component.html',
-  styleUrl: './landpage1.component.css',
+  imports: [Header3Component,RouterOutlet,RouterModule, InfoComponent],
+  templateUrl: './header3.component.html',
+  styleUrl: './header3.component.css',
   
 })
 
-export class Landpage1Component {   
+export class Header3Component {   
   isDropdownVisible: boolean = false;
 
   toggleDropdown(): void {

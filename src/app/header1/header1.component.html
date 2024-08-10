@@ -1,0 +1,85 @@
+<nav>
+  <div class="contenedor-logo">
+      <a routerLink="/home">
+        <img class="logo" src="/logo-eafit-letra-blanca-sin-fondo.png" alt="logo">
+      </a>
+  </div>
+  <div class="contenedor-titulo">
+      <h1 class="titulo">EstraMiPymes</h1>
+  </div>
+  <div>
+      <ul class="nav-list">
+        <div class="contenedor-lista tooltip-container">
+          <a routerLink="/home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home nav-subtitle" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+              <path d="M5 12l-2 0l9 -9l9 9l-2 0" />
+              <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+              <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+            </svg>
+            <span class="tooltip-text">Inicio</span>
+          </a>
+          <li class="nav-item"><a class="nav-subtitle" href="#inicio">Inicio</a></li>
+        </div>
+        
+        <div class="contenedor-lista tooltip-container">
+          <a href="#etapas"><svg href="#etapas" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-affiliate nav-subtitle" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M5.931 6.936l1.275 4.249m5.607 5.609l4.251 1.275" />
+            <path d="M11.683 12.317l5.759 -5.759" />
+            <path d="M5.5 5.5m-1.5 0a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0 -3 0" />
+            <path d="M18.5 5.5m-1.5 0a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0 -3 0" />
+            <path d="M18.5 18.5m-1.5 0a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0 -3 0" />
+            <path d="M8.5 15.5m-4.5 0a4.5 4.5 0 1 0 9 0a4.5 4.5 0 1 0 -9 0" />
+            </svg>
+            <span class="tooltip-text">Etapas</span>
+          </a>
+          <li class="nav-item"><a class="nav-subtitle" href="#contacto">Contáctanos</a></li>
+        </div>
+        
+        <div class="contenedor-lista tooltip-container">
+          <a href="#quienes-somos">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-teams nav-subtitle" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 7h10v10h-10z" />
+            <path d="M6 10h4" />
+            <path d="M8 10v4" />
+            <path d="M8.104 17c.47 2.274 2.483 4 4.896 4a5 5 0 0 0 5 -5v-7h-5" />
+            <path d="M18 18a4 4 0 0 0 4 -4v-5h-4" />
+            <path d="M13.003 8.83a3 3 0 1 0 -1.833 -1.833" />
+            <path d="M15.83 8.36a2.5 2.5 0 1 0 .594 -4.117" />
+            </svg>
+            <span class="tooltip-text">Nosotros</span>
+          </a>
+          <li class="nav-item"><a class="nav-subtitle" href="#quienes-somos">Nosotros</a></li>
+        </div>
+
+        <div class="contenedor-lista">
+          <li class="nav-item-svg"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle nav-subtitle nav-item-svg" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+            <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+            <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
+          </svg>
+          <div class="dropdown-menu-svg">
+            <a routerLink="/login" class="dropdown-item-svg">Iniciar sesión</a>
+            <a routerLink="/register" class="dropdown-item-svg">Regístrate</a>
+          </div>
+          </li>
+
+          <li class="nav-item" id="last-item"><a class="nav-subtitle">Ingreso</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" routerLink="/login">Iniciar sesión</a>
+              <a class="dropdown-item" routerLink="/register">Regístrate</a>
+            </div>
+          </li>
+        </div>
+      </ul>
+  </div>
+</nav>
+
+
+<!-- app.component.html -->
+<button id="scrollToTopBtn" class="scroll-to-top" (click)="scrollToTop()"><svg class="scroll-to-top-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M21 3H3M12 21V7M12 7L5 14M12 7L19 14" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+
+

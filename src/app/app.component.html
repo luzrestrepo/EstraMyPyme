@@ -1,4 +1,19 @@
-<app-landpage1 *ngIf="!isAdmin"></app-landpage1>
+<ng-container *ngIf="currentRoute === '/home'; else header2">
+  <app-header1></app-header1>
+</ng-container>
+
+<ng-template #header2>
+  <ng-container *ngIf="currentRoute === '/login'; else header3">
+    <app-header2></app-header2>
+  </ng-container>
+</ng-template>
+
+<ng-template #header3>
+  <ng-container *ngIf="currentRoute === '/register'">
+    <app-header3></app-header3>
+  </ng-container>
+</ng-template>
+
 <router-outlet *ngIf="!isAdmin"></router-outlet>
 
 <div *ngIf="isAdmin">
