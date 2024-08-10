@@ -1,3 +1,4 @@
+<!-- Condicional para mostrar contenido basado en isAdmin -->
 <app-landpage1 *ngIf="!isAdmin"></app-landpage1>
 <router-outlet *ngIf="!isAdmin"></router-outlet>
 
@@ -8,5 +9,5 @@
   </div>
 </div>
 
-<!-- Mostrar el footer solo si isAdmin es falso -->
-<app-footer *ngIf="!isAdmin"></app-footer>
+<!-- Mostrar el footer solo si isAdmin es falso y la ruta no es '/user' -->
+<app-footer *ngIf="!isAdmin && !isUserPage"></app-footer>

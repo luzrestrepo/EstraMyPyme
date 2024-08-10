@@ -11,6 +11,7 @@ import { SidebarComponent } from './admin/sidebar/sidebar.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { UsersComponent } from './admin/users/users.component';
 import { SettingsComponent } from './admin/settings/settings.component';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -36,15 +37,18 @@ import { SettingsComponent } from './admin/settings/settings.component';
 export class AppComponent implements OnInit {
   title = 'Estrapyme';
   isAdmin = false;
+  isUserPage = false;
 
   constructor(private router: Router) {}
 
   ngOnInit() {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.isAdmin = event.url.startsWith('/admin');
-        console.log('isAdmin:', this.isAdmin); // Verifica el valor en la consola
-      }
+    this.router.events.pipe(
+      filter((event): event is NavigationEnd => event instanceof NavigationEnd)
+    ).subscribe((event: NavigationEnd) => {
+      this.isAdmin = event.url.startsWith('/admin');
+      this.isUserPage = event.url.startsWith('/user');
+
+      
     });
   }
 }
