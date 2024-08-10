@@ -1,8 +1,14 @@
-<div class="pt-16 pl-64 bg-gray-100 min-h-screen">
-    <div class="p-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-      <div class="chart-container">
-        <canvas #pieCanvas></canvas>
+<div class="pt-16 pl-64 bg-white min-h-screen">
+  <div class="p-4">
+    <div class="chart-container flex justify-between gap-6">
+      <div class="chart-wrapper flex-1 flex flex-col justify-center items-center">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Antes de Estramipyme</h3>
+        <canvas #pieCanvasBefore></canvas>
       </div>
-    </div>
+      <div class="chart-wrapper flex-1 flex flex-col justify-center items-center">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Después de Estramipyme</h3>
+        <canvas #pieCanvasAfter></canvas>
+      </div>
+    </div>    
   </div>
+</div>
