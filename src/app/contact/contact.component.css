@@ -1,0 +1,21 @@
+.lado-derecho {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-blend-mode: multiply;
+}
+
+.lado-derecho {
+  position: relative; /* Para asegurarse de que el contenido esté posicionado correctamente */
+  background-image: linear-gradient(
+      135deg,
+      rgba(102, 126, 234, 0.8),
+      rgba(118, 75, 162, 0.8)
+    ),
+    url("https://previews.123rf.com/images/mongstock/mongstock1703/mongstock170300079/73770807-concepto-de-fondo-de-pared-empresarial-para-nuevas-ideas-con-innovaci%C3%B3n-y-creatividad.jpg");
+  background-blend-mode: overlay; /* Cambiado a un único modo de mezcla para evitar conflictos */
+  background-size: cover;
+  background-position: center; /* Para centrar la imagen */
+  background-repeat: no-repeat; /* Para evitar que la imagen se repita */
+  opacity: 0.9; /* Ajuste la opacidad al valor deseado */
+  color: white; /* Asegúrate de que el texto sea visible sobre el fondo */
+  padding: 20px; /* Ajusta el espaciado interno */
+}
