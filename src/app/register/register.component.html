@@ -1,8 +1,8 @@
-<body class="background-gradient flex items-center justify-center h-screen">
+<body class="flex items-center justify-center h-screen background-gradient">
   <div class="flex w-full max-w-6xl">
     <!-- Parte izquierda con texto -->
     <div
-      class="w-1/2 bg-gray-900 text-white p-8 flex flex-col justify-center rounded-s-lg"
+      class="flex flex-col justify-center w-1/2 p-8 text-white bg-gray-900 rounded-s-lg"
     >
       <h2 class="text-4xl font-semibold">
         Bienvenido, Regístrate para empezar con tu prueba gratuita
@@ -10,11 +10,11 @@
     </div>
 
     <!-- Parte derecha con formulario -->
-    <div class="w-1/2 bg-white p-8 shadow-lg rounded-r-lg">
-      <h2 class="text-2xl font-semibold text-gray-700 text-center">
+    <div class="w-1/2 p-8 bg-white rounded-r-lg shadow-lg">
+      <h2 class="text-2xl font-semibold text-center text-gray-700">
         Formulario de Registro
       </h2>
-      <p class="text-center text-gray-500">Estra My Pyme</p>
+      <p class="text-center text-gray-500">Estra Mi Pymes</p>
       <form
         [formGroup]="registerForm"
         (ngSubmit)="register()"
@@ -33,13 +33,30 @@
               (registerForm.get('name')?.dirty ||
                 registerForm.get('name')?.touched)
             "
-            class="text-red-500 text-sm mt-1"
+            class="mt-1 text-sm text-red-500"
           >
             <div *ngIf="registerForm.get('name')?.hasError('required')">
               El nombre es obligatorio.
             </div>
           </div>
         </div>
+        <div>
+          <input
+            type="text"
+            formControlName="id"
+            placeholder="Razón Social"
+            class="w-full p-3 text-gray-700 border rounded-lg focus:outline-none focus:ring"
+          />
+          <div
+            *ngIf="
+              registerForm.get('id')?.invalid &&
+              (registerForm.get('id')?.dirty ||
+                registerForm.get('id')?.touched)
+            "
+            class="mt-1 text-sm text-red-500"
+          >
+            </div>
+          </div>
         <div>
           <input
             type="email"
@@ -53,7 +70,7 @@
               (registerForm.get('email')?.dirty ||
                 registerForm.get('email')?.touched)
             "
-            class="text-red-500 text-sm mt-1"
+            class="mt-1 text-sm text-red-500"
           >
             <div *ngIf="registerForm.get('email')?.hasError('required')">
               El email es obligatorio.
@@ -78,10 +95,34 @@
               (registerForm.get('persona')?.dirty ||
                 registerForm.get('persona')?.touched)
             "
-            class="text-red-500 text-sm mt-1"
+            class="mt-1 text-sm text-red-500"
           >
             <div *ngIf="registerForm.get('persona')?.hasError('required')">
               El tipo de persona es obligatorio.
+            </div>
+          </div>
+        </div>
+        <div>
+          <select
+            formControlName="empresa"
+            class="w-full p-3 text-gray-700 border rounded-lg focus:outline-none focus:ring"
+          >
+          <option value="" disabled [selected]="true">Tipo de empresa</option>
+            <option value="pequeña">Pequeña</option>
+            <option value="mediana">Mediana</option>
+            <option value="grande">Grande</option>
+            <option value="otros">Otros</option>
+          </select>
+          <div
+            *ngIf="
+              registerForm.get('empresa')?.invalid &&
+              (registerForm.get('empresa')?.dirty ||
+                registerForm.get('empresa')?.touched)
+            "
+            class="mt-1 text-sm text-red-500"
+          >
+            <div *ngIf="registerForm.get('empresa')?.hasError('required')">
+              El tipo de sector es obligatorio.
             </div>
           </div>
         </div>
@@ -98,7 +139,7 @@
               (registerForm.get('username')?.dirty ||
                 registerForm.get('username')?.touched)
             "
-            class="text-red-500 text-sm mt-1"
+            class="mt-1 text-sm text-red-500"
           >
             <div *ngIf="registerForm.get('username')?.hasError('required')">
               El nombre de usuario es obligatorio.
@@ -118,7 +159,7 @@
               (registerForm.get('password')?.dirty ||
                 registerForm.get('password')?.touched)
             "
-            class="text-red-500 text-sm mt-1"
+            class="mt-1 text-sm text-red-500"
           >
             <div *ngIf="registerForm.get('password')?.hasError('required')">
               La contraseña es obligatoria.
@@ -141,7 +182,7 @@
               (registerForm.get('passwordConfirm')?.dirty ||
                 registerForm.get('passwordConfirm')?.touched)
             "
-            class="text-red-500 text-sm mt-1"
+            class="mt-1 text-sm text-red-500"
           >
             <div
               *ngIf="registerForm.get('passwordConfirm')?.hasError('required')"
@@ -155,9 +196,9 @@
             type="checkbox"
             formControlName="terms"
             id="terms"
-            class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+            class="w-4 h-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"
           />
-          <label for="terms" class="ml-2 block text-sm text-gray-900">
+          <label for="terms" class="block ml-2 text-sm text-gray-900">
             Aceptar términos y condiciones
           </label>
         </div>
