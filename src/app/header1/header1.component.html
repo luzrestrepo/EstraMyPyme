@@ -5,7 +5,7 @@
       </a>
   </div>
   <div class="contenedor-titulo">
-      <h1 class="titulo">EstraMiPymes</h1>
+      <h1 class="titulo">Estramipyme</h1>
   </div>
   <div *ngIf="showButtons">
       <ul class="nav-list">
@@ -19,7 +19,7 @@
             </svg>
             <span class="tooltip-text">Inicio</span>
           </a>
-          <li class="nav-item"><a class="nav-subtitle" routerLink="/home">Inicio</a></li>
+          <li class="nav-item"><a class="nav-subtitle" href="#inicio">Inicio</a></li>
         </div>
         
         <div class="contenedor-lista tooltip-container">
@@ -32,9 +32,9 @@
             <path d="M18.5 18.5m-1.5 0a1.5 1.5 0 1 0 3 0a1.5 1.5 0 1 0 -3 0" />
             <path d="M8.5 15.5m-4.5 0a4.5 4.5 0 1 0 9 0a4.5 4.5 0 1 0 -9 0" />
             </svg>
-            <span class="tooltip-text">Etapas</span>
+            <span class="tooltip-text">Contáctanos</span>
           </a>
-          <li class="nav-item"><a class="nav-subtitle" href="#etapas">Etapas</a></li>
+          <li class="nav-item"><a class="nav-subtitle" href="#contacto">Contáctanos</a></li>
         </div>
         
         <div class="contenedor-lista tooltip-container">
@@ -51,7 +51,7 @@
             </svg>
             <span class="tooltip-text">Nosotros</span>
           </a>
-          <li class="nav-item"><a class="nav-subtitle" href="#quienes-somos">Quienes Somos</a></li>
+          <li class="nav-item"><a class="nav-subtitle" href="#quienes-somos">Nosotros</a></li>
         </div>
 
         <div class="contenedor-lista">
@@ -77,3 +77,9 @@
       </ul>
   </div>
 </nav>
+
+
+<!-- app.component.html -->
+<button id="scrollToTopBtn" class="scroll-to-top" (click)="scrollToTop()"><svg class="scroll-to-top-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M21 3H3M12 21V7M12 7L5 14M12 7L19 14" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg></button>
+
+

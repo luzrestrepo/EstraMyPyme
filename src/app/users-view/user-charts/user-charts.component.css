@@ -1,16 +1,6 @@
-.charts-container {
-  display: flex;
-  justify-content: space-between; 
-  flex-wrap: wrap; 
-}
-
-.chart-wrapper {
-  flex: 1; 
-  max-width: 48%; 
-  margin: 10px; 
-}
-
-canvas {
-  width: 100% !important; 
-  height: auto !important; 
-}
+.chart-container {
+    width: 100%;
+    max-width: 600px; 
+    height: 600px; 
+    margin: auto; /* Para centrar el gráfico horizontalmente */
+  }

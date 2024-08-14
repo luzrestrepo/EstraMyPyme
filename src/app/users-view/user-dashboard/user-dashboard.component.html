@@ -1,56 +1,52 @@
-<body class="flex flex-col min-h-screen bg-white">
-    <section class="flex-1 flex flex-col items-center justify-center px-4 py-8">
-        <div class="w-full max-w-8xl mx-auto px-8"> 
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-                <div class="bg-gray-100 p-8 rounded-lg shadow-lg"> 
-                    <h2 class="text-3xl font-semibold text-gray-800 mb-6">Gráficos de Comparación</h2> 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="w-full">
-                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Antes de Estramipyme</h3>
-                            <canvas #pieCanvasBefore class="w-auto h-72"></canvas>
-                        </div>
-                        <div class="w-full">
-                            <h3 class="text-xl font-semibold text-gray-800 mb-4">Después de Estramipyme</h3>
-                            <canvas #pieCanvasAfter class="w-auto h-72"></canvas> 
+<body class="bg-gray-50 flex flex-col min-h-screen">
+    <section class="flex-1 flex items-center justify-center px-4 ml-64"> <!-- Agregué ml-64 aquí -->
+        <div class="w-full max-w-7xl mx-auto px-8">
+            <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-12 shadow-xl rounded-3xl border border-gray-300">
+                <div class="rounded-t bg-gray-800 mb-0 px-8 py-6 border-b border-gray-300 rounded-t-3xl">
+                    <div class="flex flex-wrap items-center">
+                        <div class="w-full px-4 max-w-full flex-grow flex-1">
+                            <h3 class="font-semibold text-2xl text-white">Estadísticas de la Empresa</h3>
                         </div>
                     </div>
                 </div>
-
-                <!-- Tabla  -->
-                <div class="bg-gray-100 p-8 rounded-lg shadow-lg">
-                    <h2 class="text-3xl font-semibold text-gray-800 mb-6">Estadísticas de mi Empresa</h2> 
-                    <div class="block w-full overflow-x-auto">
-                        <table class="items-center w-full border-collapse text-lg rounded-lg overflow-hidden bg-white text-gray-800">
-                            <thead>
-                                <tr>
-                                    <th class="px-8 py-6 bg-gray-200 text-gray-700 border-b border-gray-300 text-left uppercase font-semibold">Categoría</th> 
-                                    <th class="px-8 py-6 bg-gray-200 text-gray-700 border-b border-gray-300 text-left uppercase font-semibold">Antes de Estramipyme</th> 
-                                    <th class="px-8 py-6 bg-gray-200 text-gray-700 border-b border-gray-300 text-left uppercase font-semibold">Después de Estramipyme</th> 
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="bg-gray-100 hover:bg-gray-200 transition duration-300">
-                                    <th class="border-t-0 px-8 py-6 text-left text-gray-800 text-lg font-medium">Popularidad</th> 
-                                    <td class="border-t-0 px-8 py-6 text-gray-800 text-lg">50</td> 
-                                    <td class="border-t-0 px-8 py-6 text-gray-800 text-lg">80</td>
-                                </tr>
-                                <tr class="bg-gray-100 hover:bg-gray-200 transition duration-300">
-                                    <th class="border-t-0 px-8 py-6 text-left text-gray-800 text-lg font-medium">Ventas</th> 
-                                    <td class="border-t-0 px-8 py-6 text-gray-800 text-lg">200</td> 
-                                    <td class="border-t-0 px-8 py-6 text-gray-800 text-lg">300</td> 
-                                </tr>
-                                <tr class="bg-gray-100 hover:bg-gray-200 transition duration-300">
-                                    <th class="border-t-0 px-8 py-6 text-left text-gray-800 text-lg font-medium">Utilidades</th>
-                                    <td class="border-t-0 px-8 py-6 text-gray-800 text-lg">30</td> 
-                                    <td class="border-t-0 px-8 py-6 text-gray-800 text-lg">50</td> 
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="block w-full overflow-x-auto">
+                    <table class="items-center w-full border-collapse text-lg rounded-lg overflow-hidden">
+                        <thead>
+                            <tr>
+                                <th class="px-8 py-4 bg-gray-100 text-gray-700 border-b border-gray-300 text-left uppercase font-semibold">Mabeca</th>
+                                <th class="px-8 py-4 bg-gray-100 text-gray-700 border-b border-gray-300 text-left uppercase font-semibold">Ventas</th>
+                                <th class="px-8 py-4 bg-gray-100 text-gray-700 border-b border-gray-300 text-left uppercase font-semibold">Clientes</th>
+                                <th class="px-8 py-4 bg-gray-100 text-gray-700 border-b border-gray-300 text-left uppercase font-semibold">Tasa de crecimiento</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="bg-gray-50 hover:bg-gray-100">
+                                <th class="border-t-0 px-8 py-6 text-left text-gray-800 text-lg">Ventas en Línea</th>
+                                <td class="border-t-0 px-8 py-6 text-gray-800 text-lg">$15,000</td>
+                                <td class="border-t-0 px-8 py-6 text-gray-800 text-lg">150</td>
+                                <td class="border-t-0 px-8 py-6 text-gray-800 text-lg flex items-center"><i class="fas fa-arrow-up text-green-500 mr-2"></i>75%</td>
+                            </tr>
+                            <tr class="bg-gray-50 hover:bg-gray-100">
+                                <th class="border-t-0 px-8 py-6 text-left text-gray-800 text-lg">Ventas en Tienda</th>
+                                <td class="border-t-0 px-8 py-6 text-gray-800 text-lg">$10,500</td>
+                                <td class="border-t-0 px-8 py-6 text-gray-800 text-lg">200</td>
+                                <td class="border-t-0 px-8 py-6 text-gray-800 text-lg flex items-center"><i class="fas fa-arrow-down text-yellow-500 mr-2"></i>60%</td>
+                            </tr>
+                            <tr class="bg-gray-50 hover:bg-gray-100">
+                                <th class="border-t-0 px-8 py-6 text-left text-gray-800 text-lg">Ventas Corporativas</th>
+                                <td class="border-t-0 px-8 py-6 text-gray-800 text-lg">$25,200</td>
+                                <td class="border-t-0 px-8 py-6 text-gray-800 text-lg">75</td>
+                                <td class="border-t-0 px-8 py-6 text-gray-800 text-lg flex items-center"><i class="fas fa-arrow-up text-green-500 mr-2"></i>80%</td>
+                            </tr>
+                            <tr class="bg-gray-50 hover:bg-gray-100">
+                                <th class="border-t-0 px-8 py-6 text-left text-gray-800 text-lg">Ventas en Eventos</th>
+                                <td class="border-t-0 px-8 py-6 text-gray-800 text-lg">$5,800</td>
+                                <td class="border-t-0 px-8 py-6 text-gray-800 text-lg">30</td>
+                                <td class="border-t-0 px-8 py-6 text-gray-800 text-lg flex items-center"><i class="fas fa-arrow-down text-red-500 mr-2"></i>50%</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                
             </div>
         </div>
     </section>
