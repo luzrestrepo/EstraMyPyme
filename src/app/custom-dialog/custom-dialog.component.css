@@ -1,0 +1,52 @@
+/* Overlay del diálogo */
+.dialog-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Fondo negro con opacidad */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Contenido del diálogo */
+.dialog-content {
+  background: #ffffff; /* Fondo blanco para el contenido */
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 500px; /* Aumentar el ancho máximo para más espacio */
+  width: 90%; /* Usar un porcentaje para que sea adaptable */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+  color: #000000; /* Color del texto negro para contraste */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Asegura que los elementos internos se estiren correctamente */
+}
+
+/* Título del diálogo */
+.dialog-content h2 {
+  margin: 0 0 20px 0; /* Espacio debajo del título */
+  font-size: 1.5rem; /* Tamaño de fuente del título */
+  color: #333333; /* Color más suave para el título */
+}
+
+/* Botón en el diálogo */
+.dialog-content button {
+  margin-top: 20px;
+  background: #007bff; /* Color de fondo del botón */
+  color: #ffffff; /* Color del texto del botón */
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem; /* Tamaño de fuente del botón */
+  align-self: flex-end; /* Alinea el botón al final del contenedor */
+}
+
+/* Estilo hover para el botón */
+.dialog-content button:hover {
+  background: #0056b3; /* Color de fondo del botón al pasar el ratón */
+}

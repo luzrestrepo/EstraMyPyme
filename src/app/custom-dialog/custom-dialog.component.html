@@ -1,0 +1,7 @@
+<div class="dialog-overlay" *ngIf="visible">
+  <div class="dialog-content">
+    <h2>{{ title }}</h2>
+    <ng-content></ng-content>
+    <button (click)="close()">Cerrar</button>
+  </div>
+</div>
