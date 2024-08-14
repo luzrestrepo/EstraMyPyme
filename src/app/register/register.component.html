@@ -122,6 +122,31 @@
             class="mt-1 text-sm text-red-500"
           >
             <div *ngIf="registerForm.get('empresa')?.hasError('required')">
+              El tipo de empresa es obligatorio.
+            </div>
+          </div>
+        </div>
+        <div>
+          <select
+            formControlName="sector"
+            class="w-full p-3 text-gray-700 border rounded-lg focus:outline-none focus:ring"
+          >
+          <option value="" disabled [selected]="true">Sector</option>
+            <option value="pequeña">Comercio</option>
+            <option value="mediana">Industria</option>
+            <option value="grande">Servicios</option>
+            <option value="otros">Construcción</option>
+            <option value="otros">Transporte</option>
+          </select>
+          <div
+            *ngIf="
+              registerForm.get('empresa')?.invalid &&
+              (registerForm.get('empresa')?.dirty ||
+                registerForm.get('empresa')?.touched)
+            "
+            class="mt-1 text-sm text-red-500"
+          >
+            <div *ngIf="registerForm.get('empresa')?.hasError('required')">
               El tipo de sector es obligatorio.
             </div>
           </div>
