@@ -10,7 +10,7 @@ import { Header2Component } from '../header2/header2.component';
   standalone: true,
   imports: [FormsModule, RouterModule, CommonModule, Header2Component],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  styleUrl: './login.component.css',
 })
 export class LoginComponent {
 

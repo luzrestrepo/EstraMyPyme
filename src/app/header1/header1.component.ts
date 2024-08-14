@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [RouterOutlet, RouterModule, InfoComponent, CommonModule],
   templateUrl: './header1.component.html',
-  styleUrls: ['./header1.component.css'],
+  styleUrl: './header1.component.css',
 })
 export class Header1Component {
   isDropdownVisible: boolean = false;
