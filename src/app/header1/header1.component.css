@@ -229,7 +229,7 @@ svg {
     padding: 5px 0;
     position: absolute;
     z-index: 1;
-    bottom: -35px; /* Ajusta según sea necesario */
+    bottom: -35px;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
@@ -237,7 +237,7 @@ svg {
     font-size: 12px;
 }
 
-/* Mostrar el tooltip al pasar el cursor sobre el contenedor */
+/* Mostrar el tooltip al pasar el mouse sobre el contenedor */
 .tooltip-container:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
@@ -255,7 +255,7 @@ svg {
     border-radius: 50%;
     cursor: pointer;
     font-size: 20px;
-    display: none; /* Oculta la flecha inicialmente */
+    display: none;
     z-index: 1001;
 }
 
@@ -267,6 +267,21 @@ svg {
     width: 1.5rem;
 }
 
+.nav-link-inactive {
+    pointer-events: none;
+    color: gray;
+    cursor: default;
+  }
+  
+  .nav-subtitle-inactive {
+    color: gray;
+    text-decoration: none;
+    cursor: default
+  }
+  
+  .icon {
+    color: inherit;
+  }
 
 
 

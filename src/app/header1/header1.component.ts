@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterModule, RouterOutlet } from '@angular/router';
 import { InfoComponent } from '../info/info.component';
 import { filter } from 'rxjs';
@@ -11,9 +11,10 @@ import { CommonModule } from '@angular/common';
   templateUrl: './header1.component.html',
   styleUrls: ['./header1.component.css'],
 })
-export class Header1Component {
+export class Header1Component implements OnInit {
   isDropdownVisible: boolean = false;
   showButtons: boolean = true;
+  currentRoute: string = ''
 
   private hideButtonsRoutes: string[] = [
     '/user/book',
@@ -28,9 +29,17 @@ export class Header1Component {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
-      const currentUrl = this.router.url;
-      this.showButtons = !this.hideButtonsRoutes.includes(currentUrl);
+      this.currentRoute = this.router.url;
+      /* this.showButtons = !this.hideButtonsRoutes.includes(currentUrl) */;
     });
+  }
+
+  isUserRoute(): boolean {
+    return /^\/user/.test(this.currentRoute);
+  }
+
+  isAdminRoute(): boolean {
+    return /^\/admin/.test(this.currentRoute);
   }
 
   toggleDropdown(): void {

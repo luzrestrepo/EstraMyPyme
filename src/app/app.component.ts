@@ -5,8 +5,6 @@ import { TextComponent } from './main/text/text.component';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { Header1Component } from './header1/header1.component';
-import { Header2Component } from './header2/header2.component';
-import { Header3Component } from './header3/header3.component';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { SidebarComponent } from './admin/sidebar/sidebar.component';
@@ -26,8 +24,6 @@ import { filter } from 'rxjs/operators';
     TextComponent,
     RegisterComponent,
     Header1Component,
-    Header2Component,
-    Header3Component,
     HomeComponent,
     SidebarComponent,
     DashboardComponent,
