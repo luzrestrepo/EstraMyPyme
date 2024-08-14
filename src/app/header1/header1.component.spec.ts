@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Landpage1Component } from './landpage1.component';
+import { Header1Component } from './header1.component';
 
-describe('Landpage1Component', () => {
-  let component: Landpage1Component;
-  let fixture: ComponentFixture<Landpage1Component>;
+describe('Header1Component', () => {
+  let component: Header1Component;
+  let fixture: ComponentFixture<Header1Component>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Landpage1Component]
+      imports: [Header1Component]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(Landpage1Component);
+    fixture = TestBed.createComponent(Header1Component);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

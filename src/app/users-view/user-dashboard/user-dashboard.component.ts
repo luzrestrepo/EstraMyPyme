@@ -106,7 +106,4 @@ export class UserDashboardComponent implements AfterViewInit {
       },
     });
   }
-}  
-
-
-
+}

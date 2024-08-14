@@ -2,7 +2,8 @@
   --negro: #070F2B;
   --indigo: #1B1A55;
   --violeta: #535C91;
-  --morado: #9290C3
+  --morado: #9290C3;
+  --negro: rgb(9, 21, 61);
 }
 
 body {

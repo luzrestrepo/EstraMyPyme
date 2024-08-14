@@ -9,7 +9,7 @@ import { Chart } from 'chart.js';
   standalone: true,
   imports: [RouterLink, CommonModule, RouterModule, BaseChartDirective],
   templateUrl: './user-charts.component.html',
-  styleUrls: ['./user-charts.component.css']
+  styleUrl: './user-charts.component.css'
 })
 export class UserChartsComponent implements AfterViewInit {
   @ViewChild('pieCanvasBefore') pieCanvasBefore!: ElementRef<HTMLCanvasElement>;
@@ -106,6 +106,10 @@ export class UserChartsComponent implements AfterViewInit {
           },
         },
       },
-    });
-  }
+    });
+  }
 }
+    
+  
+  
+

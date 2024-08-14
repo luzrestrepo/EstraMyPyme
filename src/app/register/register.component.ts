@@ -22,33 +22,37 @@ export class RegisterComponent {
   registerForm = new FormGroup(
     {
       name: new FormControl('', [Validators.required]),
+      id: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
       persona: new FormControl('', [Validators.required]),
       username: new FormControl('', [Validators.required]),
+      empresa: new FormControl('', [Validators.required]),
+      sector: new FormControl('', [Validators.required]),
       password: new FormControl('', [
         Validators.required,
         Validators.minLength(6),
       ]),
       passwordConfirm: new FormControl('', [Validators.required]),
-      terms: new FormControl(false),
+      terms: new FormControl(false, [Validators.requiredTrue]),
     },
     { validators: passwordConfirmValidator }
   );
 
-  constructor (private userService: UsersService, private router: Router){
-
-
-  }
+  constructor(private userService: UsersService, private router: Router) {}
 
   get name() {
     return this.registerForm.get('name');
   }
+
   get email() {
     return this.registerForm.get('email');
   }
+
   register() {
-    this.userService.addUser(this.registerForm.value as User)
-    console.log(this.registerForm.value);
-    this.router.navigate(['/login'])
-  }
+    if (this.registerForm.valid) {
+      this.userService.addUser(this.registerForm.value as User);
+      console.log(this.registerForm.value);
+      this.router.navigate(['/login']);
+    }
+  }
 }

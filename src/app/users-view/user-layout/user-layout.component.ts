@@ -6,7 +6,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-user-layout',
   standalone: true,
-  imports: [RouterOutlet, UserSidebarComponent, CommonModule,],
+  imports: [RouterOutlet, UserSidebarComponent, CommonModule],
   templateUrl: './user-layout.component.html',
   styleUrl: './user-layout.component.css'
 })

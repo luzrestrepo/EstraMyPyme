@@ -8,7 +8,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [RouterLink, CommonModule, RouterModule],
   templateUrl: './user-sidebar.component.html',
-  styleUrls: ['./user-sidebar.component.css'] 
+  styleUrl: './user-sidebar.component.css' 
 })
 export class UserSidebarComponent {
   
@@ -25,8 +25,6 @@ export class UserSidebarComponent {
   toggleSidebar() {
     this.sidebarOpen = !this.sidebarOpen;
     console.log('click'); 
-  }
-  
-  
+  }  
 }
 

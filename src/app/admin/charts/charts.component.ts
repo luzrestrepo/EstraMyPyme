@@ -11,7 +11,7 @@ Chart.register(...registerables);
   standalone: true,
   imports: [RouterModule, BaseChartDirective],
   templateUrl: './charts.component.html',
-  styleUrls: ['./charts.component.css'],
+  styleUrl: './charts.component.css',
 })
 export class ChartComponent implements AfterViewInit {
   @ViewChild('pieCanvas') pieCanvas!: ElementRef<HTMLCanvasElement>;
@@ -25,11 +25,11 @@ export class ChartComponent implements AfterViewInit {
     this.pieChart = new Chart(this.pieCanvas.nativeElement, {
       type: 'bar',
       data: {
-        labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio','Julio','Agosto','Septiembre' , 'Octubre' ,'Noviembre' ,'Diciembre'],
+        labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio','Julio','Agosto','' , '' ,'' ,''],
         datasets: [
           {
             label: 'Cantidad de empresas registradas',
-            data: [12, 19, 3, 5, 2, 3,15,25,27,10,7.13,20],
+            data: [12, 19, 3, 5, 2, 3,15,25],
             backgroundColor: [
               'rgba(255, 99, 132, 0.2)',    // Rosa
               'rgba(54, 162, 235, 0.2)',    // Azul claro
