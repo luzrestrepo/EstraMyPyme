@@ -1,52 +1,131 @@
-<div class="min-h-screen p-8 bg-gray-100">
-  <div class="max-w-3xl mx-auto bg-white rounded-lg shadow-lg">
-    <div class="p-6 border-b">
-      <h1 class="text-2xl font-bold text-center text-black">Configuración del Perfil</h1>
-    </div>
-    <div class="p-6 space-y-8">
-      <div>
-        <h2 class="mb-4 text-xl font-bold text-gray-700">Actualizar Contraseña</h2>
-        <form (ngSubmit)="changePassword()" class="space-y-4">
-          <div>
-            <label for="currentPassword" class="block mb-1 text-black">Contraseña Actual</label>
-            <input id="currentPassword" [(ngModel)]="passwordData.currentPassword" name="currentPassword" type="password" class="w-full px-3 py-2 text-black border rounded-lg" required />
-          </div>
-          <div>
-            <label for="newPassword" class="block mb-1 text-black">Nueva Contraseña</label>
-            <input id="newPassword" [(ngModel)]="passwordData.newPassword" name="newPassword" type="password" class="w-full px-3 py-2 text-black border rounded-lg" required />
-          </div>
-          <div>
-            <label for="confirmPassword" class="block mb-1 text-black">Confirmar Nueva Contraseña</label>
-            <input id="confirmPassword" [(ngModel)]="passwordData.confirmPassword" name="confirmPassword" type="password" class="w-full px-3 py-2 text-black border rounded-lg" required />
-          </div>
+<div class="x min-h-screen p-8 bg-gray-50 flex items-center">
+  <div class="w-full max-w-3xl bg-white rounded-lg shadow-lg p-6">
+    <h1 class="text-3xl font-semibold text-center text-blue-600 mb-6">
+      Configuración del Perfil
+    </h1>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-24">
+      <!-- Sección de Actualización de Contraseña -->
+      <div
+        class="bg-gradient-to-r from-blue-400 to-indigo-500 p-4 rounded-lg shadow-md text-white"
+      >
+        <h2 class="text-xl font-bold mb-4">Actualizar Contraseña</h2>
+        <button
+          mat-raised-button
+          color="accent"
+          (click)="openPasswordDialog()"
+          class="w-full text-bla bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded"
+        >
+          Cambiar Contraseña
+        </button>
+      </div>
+
+      <!-- Sección de Empresas Registradas -->
+      <div
+        class="bg-gradient-to-r from-green-400 to-teal-500 p-4 rounded-lg shadow-md text-white"
+      >
+        <h2 class="text-xl font-bold mb-4">Empresas Registradas</h2>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="openCompaniesDialog()"
+          class="w-full text-black bg-green-600 hover:bg-green-700 py-2 px-4 rounded"
+        >
+          Gestionar Empresas
+        </button>
+      </div>
+      <app-custom-dialog
+        #passwordDialog
+        [title]="'Cambiar Contraseña'"
+        [visible]="false"
+      >
+        <form (ngSubmit)="changePassword()">
+          <mat-form-field appearance="fill" class="w-full mb-6">
+            <mat-label class="items-center">Contraseña Actual</mat-label>
+            <input
+              matInput
+              [(ngModel)]="passwordData.currentPassword"
+              name="currentPassword"
+              type="password"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="w-full mb-4">
+            <mat-label>Nueva Contraseña</mat-label>
+            <input
+              matInput
+              [(ngModel)]="passwordData.newPassword"
+              name="newPassword"
+              type="password"
+              required
+            />
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="w-full mb-4">
+            <mat-label>Confirmar Nueva Contraseña</mat-label>
+            <input
+              matInput
+              [(ngModel)]="passwordData.confirmPassword"
+              name="confirmPassword"
+              type="password"
+              required
+            />
+          </mat-form-field>
           <div class="flex justify-end">
-            <button type="submit" class="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600">Cambiar Contraseña</button>
+            <button
+              mat-raised-button
+              color="primary"
+              type="submit"
+              class="text-black bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded"
+            >
+              Guardar Cambios
+            </button>
           </div>
         </form>
-      </div>
-      <div>
-        <h2 class="mb-4 text-xl font-bold text-gray-700">Actualizar Empresas Registradas</h2>
-        <form (ngSubmit)="updateCompanies()" class="space-y-4">
-          <div *ngFor="let company of companies; let i = index" class="flex items-center space-x-2">
-            <input [(ngModel)]="company.name" name="companyName{{i}}" type="text" class="flex-1 px-3 py-2 text-black border rounded-lg" required />
-            <button type="button" (click)="removeCompany(i)" class="px-2 py-1 text-white bg-red-500 rounded-lg hover:bg-red-600">Eliminar</button>
-          </div>
-          <div class="flex justify-end mt-4 space-x-2">
-            <button type="button" (click)="addCompany()" class="px-4 py-2 text-white bg-green-500 rounded-lg hover:bg-green-600">Agregar Empresa</button>
-            <button type="submit" class="px-4 py-2 text-white bg-blue-500 rounded-lg hover:bg-blue-600">Actualizar Empresas</button>
-          </div>
-        </form>
-      </div>
-      <div>
-        <h2 class="mb-4 text-xl font-bold text-gray-700">Errores de Creación de Perfiles</h2>
-        <ul class="space-y-2 text-black list-disc list-inside">
-          <li *ngFor="let error of profileCreationErrors">{{ error }}</li>
-        </ul>
-        <div class="flex justify-end mt-4">
-          <button (click)="clearProfileErrors()" class="px-4 py-2 text-white bg-red-500 rounded-lg hover:bg-red-600">Limpiar Errores</button>
+      </app-custom-dialog>
+
+      <!-- Diálogo para gestión de empresas -->
+      <app-custom-dialog
+        #companiesDialog
+        [title]="'Gestionar Empresas Registradas'"
+        [visible]="false"
+      >
+        <div
+          *ngFor="let company of companies(); let i = index"
+          class="flex items-center space-x-2 mb-4 text-black"
+        >
+          <mat-form-field class="flex-1">
+            <!-- Cambia a flex-1 para que el input ocupe el espacio disponible -->
+            <input
+              matInput
+              [(ngModel)]="company.name"
+              name="companyName{{ i }}"
+              placeholder="Nombre de la empresa"
+              required
+            />
+          </mat-form-field>
+          <button mat-icon-button color="warn" (click)="removeCompany(i)">
+            <mat-icon class="w-full">delete</mat-icon>
+          </button>
         </div>
-      </div>
+        <div class="flex justify-between mt-4">
+          <button
+            mat-raised-button
+            color="primary"
+            (click)="addCompany()"
+            class="text-black bg-green-600 hover:bg-green-700 py-2 px-4 rounded"
+          >
+            Agregar Empresa
+          </button>
+          <button
+            mat-raised-button
+            color="accent"
+            (click)="updateCompanies()"
+            class="text-black bg-blue-600 hover:bg-blue-700 py-2 px-4 rounded"
+          >
+            Guardar Cambios
+          </button>
+        </div>
+      </app-custom-dialog>
     </div>
   </div>
-</div> 
-
+</div>

@@ -26,20 +26,9 @@ app-sidebar {
 /* Estilo para el modo claro */
 body {
   background-color: white;
-  color: black;
-}
-
-/* Estilo para el modo oscuro */
-body.dark {
-  background-color: #121212;
-  color: white;
-}
-
-/* Estilo adicional para otros elementos */
-.group:hover .dark {
-  background-color: gray;
+  color: rgb(30, 10, 64);
 }
 
 .layout-container {
-  background-color: var(--negro);
+  background-color: var(--indigo);
 }
