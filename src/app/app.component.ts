@@ -15,7 +15,6 @@ import { UsersComponent } from './admin/users/users.component';
 import { SettingsComponent } from './admin/settings/settings.component';
 import { filter } from 'rxjs/operators';
 
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -42,7 +41,7 @@ import { filter } from 'rxjs/operators';
 export class AppComponent implements OnInit {
   title = 'Estrapyme';
   isAdmin = false;
-  currentRoute: string = '';  // Declaración de la propiedad
+  currentRoute: string = ''; // Declaración de la propiedad
 
   constructor(private router: Router) {}
 
@@ -55,26 +54,12 @@ export class AppComponent implements OnInit {
     });
     this.router.events
       .pipe(
-        filter((event): event is NavigationEnd => event instanceof NavigationEnd) // Asegurando que solo NavigationEnd pase
+        filter(
+          (event): event is NavigationEnd => event instanceof NavigationEnd
+        ) // Asegurando que solo NavigationEnd pase
       )
       .subscribe((event: NavigationEnd) => {
         this.currentRoute = event.urlAfterRedirects;
       });
   }
 }
-/* export class AppComponent implements OnInit {
-  title = 'Estrapyme';
-  isAdmin = false;
-
-  constructor(private router: Router) {}
-
-  ngOnInit() {
-    this.router.events.subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.isAdmin = event.url.startsWith('/admin');
-        console.log('isAdmin:', this.isAdmin); // Verifica el valor en la consola
-      }
-    });
-  }
-}
- */

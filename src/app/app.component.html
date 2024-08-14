@@ -1,6 +1,13 @@
-<app-header2 *ngIf="currentRoute === '/login'"></app-header2>
-<app-header3 *ngIf="currentRoute === '/register'"></app-header3>
-<app-header1 *ngIf="currentRoute !== '/login' && currentRoute !== '/register'"></app-header1>
+<!-- Header 2 -->
+<app-header2 *ngIf="currentRoute === '/login' && !isAdmin"></app-header2>
+
+<!-- Header 3 -->
+<app-header3 *ngIf="currentRoute === '/register' && !isAdmin"></app-header3>
+
+<!-- Header 1 -->
+<app-header1
+  *ngIf="currentRoute !== '/login' && currentRoute !== '/register' && !isAdmin"
+></app-header1>
 
 <router-outlet *ngIf="!isAdmin"></router-outlet>
 
