@@ -40,6 +40,7 @@ import { filter } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit {
   title = 'Estrapyme';
+  isUser = false
   isAdmin = false;
   currentRoute: string = ''; // Declaración de la propiedad
 
@@ -49,6 +50,8 @@ export class AppComponent implements OnInit {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
         this.isAdmin = event.url.startsWith('/admin');
+        ; 
+        this.isUser = event.url.startsWith('/user');
         console.log('isAdmin:', this.isAdmin); // Verifica el valor en la consola
       }
     });

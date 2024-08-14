@@ -25,8 +25,6 @@ export class UserSidebarComponent {
   toggleSidebar() {
     this.sidebarOpen = !this.sidebarOpen;
     console.log('click'); 
-  }
-  
-  
+  }  
 }
 

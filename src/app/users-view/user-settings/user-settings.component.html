@@ -1,12 +1,12 @@
-<div class="pt-16 pl-64 bg-gray-100 min-h-screen">
+<div class="min-h-screen pt-16 pl-64 bg-gray-100">
   <div class="p-4">
-    <h1 class="text-3xl font-bold mb-6 text-black">Configuración</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <h1 class="mb-6 text-3xl font-bold text-black">Configuración</h1>
+    <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       <!-- Perfil de Usuario -->
-      <div class="bg-white p-6 rounded-lg shadow-md relative flex flex-col">
-        <h2 class="text-lg font-bold mb-2 text-black cursor-pointer" (click)="showUserProfileForm()">Actualizar datos</h2>
+      <div class="relative flex flex-col p-6 bg-white rounded-lg shadow-md">
+        <h2 class="mb-2 text-lg font-bold text-black cursor-pointer" (click)="showUserProfileForm()">Actualizar datos</h2>
         <p class="text-gray-700">Actualiza tu correo electrónico, nombre y número de teléfono.</p>
-        <div *ngIf="isUserProfileFormVisible" class="absolute top-full left-0 mt-4 bg-white p-6 rounded-lg shadow-md w-full">
+        <div *ngIf="isUserProfileFormVisible" class="absolute left-0 w-full p-6 mt-4 bg-white rounded-lg shadow-md top-full">
           <form (ngSubmit)="saveUserProfile()" class="space-y-4">
             <div class="relative z-0 w-full mb-5 group">
               <input type="email" name="email" id="email" [(ngModel)]="userProfile.email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
@@ -26,21 +26,21 @@
       </div>
 
       <!-- Notificaciones -->
-      <div class="bg-white p-6 rounded-lg shadow-md relative flex flex-col">
-        <h2 class="text-lg font-bold mb-2 text-black cursor-pointer" (click)="showNotificationsForm()">Notificaciones</h2>
+      <div class="relative flex flex-col p-6 bg-white rounded-lg shadow-md">
+        <h2 class="mb-2 text-lg font-bold text-black cursor-pointer" (click)="showNotificationsForm()">Notificaciones</h2>
         <p class="text-gray-700">Configura tus preferencias de notificaciones.</p>
-        <div *ngIf="isNotificationsFormVisible" class="absolute top-full left-0 mt-4 bg-white p-6 rounded-lg shadow-md w-full">
-          <form (ngSubmit)="saveNotifications()" class="space-y-4 w-full">
+        <div *ngIf="isNotificationsFormVisible" class="absolute left-0 w-full p-6 mt-4 bg-white rounded-lg shadow-md top-full">
+          <form (ngSubmit)="saveNotifications()" class="w-full space-y-4">
             <div class="relative z-0 w-full mb-5 group">
-              <input type="checkbox" id="email_notifications" name="email_notifications" [(ngModel)]="notificationSettings.email" class="h-4 w-4 text-blue-600 border-gray-300 rounded" />
+              <input type="checkbox" id="email_notifications" name="email_notifications" [(ngModel)]="notificationSettings.email" class="w-4 h-4 text-blue-600 border-gray-300 rounded" />
               <label for="email_notifications" class="ml-2 text-gray-700">Notificaciones por email</label>
             </div>
             <div class="relative z-0 w-full mb-5 group">
-              <input type="checkbox" id="sms_notifications" name="sms_notifications" [(ngModel)]="notificationSettings.sms" class="h-4 w-4 text-blue-600 border-gray-300 rounded" />
+              <input type="checkbox" id="sms_notifications" name="sms_notifications" [(ngModel)]="notificationSettings.sms" class="w-4 h-4 text-blue-600 border-gray-300 rounded" />
               <label for="sms_notifications" class="ml-2 text-gray-700">Notificaciones por SMS</label>
             </div>
             <div class="relative z-0 w-full mb-5 group">
-              <input type="checkbox" id="push_notifications" name="push_notifications" [(ngModel)]="notificationSettings.push" class="h-4 w-4 text-blue-600 border-gray-300 rounded" />
+              <input type="checkbox" id="push_notifications" name="push_notifications" [(ngModel)]="notificationSettings.push" class="w-4 h-4 text-blue-600 border-gray-300 rounded" />
               <label for="push_notifications" class="ml-2 text-gray-700">Notificaciones por whatsapp</label>
             </div>
             <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Guardar cambios</button>
@@ -49,10 +49,10 @@
       </div>
 
       <!-- Seguridad -->
-      <div class="bg-white p-6 rounded-lg shadow-md relative flex flex-col">
-        <h2 class="text-lg font-bold mb-2 text-black cursor-pointer" (click)="showSecurityForm()">Seguridad</h2>
+      <div class="relative flex flex-col p-6 bg-white rounded-lg shadow-md">
+        <h2 class="mb-2 text-lg font-bold text-black cursor-pointer" (click)="showSecurityForm()">Seguridad</h2>
         <p class="text-gray-700">Gestiona tus opciones de seguridad.</p>
-        <div *ngIf="isSecurityFormVisible" class="absolute top-full left-0 mt-4 bg-white p-6 rounded-lg shadow-md w-full">
+        <div *ngIf="isSecurityFormVisible" class="absolute left-0 w-full p-6 mt-4 bg-white rounded-lg shadow-md top-full">
           <form (ngSubmit)="saveSecurity()" #securityForm="ngForm" class="space-y-4">
             <div class="relative z-0 w-full mb-5 group">
               <input type="password" name="currentPassword" id="current_password" [(ngModel)]="securitySettings.currentPassword" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
