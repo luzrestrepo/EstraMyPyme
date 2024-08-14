@@ -8,7 +8,7 @@ import { AuthService } from '../../services/auth.service';
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './user-settings.component.html',
-  styleUrls: ['./user-settings.component.css'] 
+  styleUrl: './user-settings.component.css' 
 })
 export class UserSettingsComponent implements OnInit {
   isUserProfileFormVisible = false;

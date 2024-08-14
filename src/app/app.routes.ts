@@ -24,9 +24,7 @@ export const routes: Routes = [
   { path: 'admin/users', component: UsersComponent },
   { path: 'admin/settings', component: SettingsComponent },
   { path: 'admin/charts', component: ChartComponent },
-  {
-    path: 'user',
-    component: UserLayoutComponent,
+  { path: 'user', component: UserLayoutComponent,
     children: [
       { path: '', redirectTo: 'book', pathMatch: 'full' },
       { path: 'book', component: BookComponent },

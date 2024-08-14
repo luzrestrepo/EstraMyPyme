@@ -25,7 +25,30 @@ nav {
     position: sticky;
     z-index: 1000;
     top: 0;
+
+    box-shadow: none;
+    transition: box-shadow 0.3s ease, background-color 0.3s ease;
 }
+
+nav.scrolled {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #110d29; /* O cualquier otro color */
+  }
+
+  nav.scrolled2 {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #271e5a; /* O cualquier otro color */
+  }
+
+  nav.scrolled3 {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #1d1836; /* O cualquier otro color */
+  }
+
+  nav.scrolled4 {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: var(--negro); /* O cualquier otro color */
+  }
 
 nav ul {
     display: flex;
@@ -65,6 +88,7 @@ nav ul li {
     align-items: center;
 }
 
+
 #last-item {
     padding-right: 1rem;
 }
@@ -83,7 +107,13 @@ nav ul li {
 
 .icon-tabler {
     min-width: 35px;
+    transition: transform 0.3s ease, stroke 0.3s ease;
 }
+
+.contenedor-lista:hover .icon-tabler {
+    transform: scale(1.1) rotate(10deg); /* O cualquier otra animación */
+    stroke: var(--morado);
+  }
 
 .contenedor-logo {
     display: flex;
@@ -114,6 +144,7 @@ nav ul li {
     font-size: 2rem;
     font-weight: bold;
     margin: 0 auto;
+    text-transform: uppercase;
 }
 
 svg {
@@ -186,6 +217,7 @@ svg {
     position: relative;
 }
 
+
 /* Ocultar el tooltip por defecto */
 .tooltip-text {
     visibility: hidden;
@@ -197,7 +229,7 @@ svg {
     padding: 5px 0;
     position: absolute;
     z-index: 1;
-    bottom: -35px; /* Ajusta según sea necesario */
+    bottom: -35px;
     left: 50%;
     transform: translateX(-50%);
     opacity: 0;
@@ -205,11 +237,53 @@ svg {
     font-size: 12px;
 }
 
-/* Mostrar el tooltip al pasar el cursor sobre el contenedor */
+/* Mostrar el tooltip al pasar el mouse sobre el contenedor */
 .tooltip-container:hover .tooltip-text {
     visibility: visible;
     opacity: 1;
 }
+
+/* app.component.css */
+.scroll-to-top {
+    position: fixed;
+    top: 105px;
+    right: 30px;
+    background-color: #fff;
+    color: var(--indigo);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    display: none;
+    z-index: 1001;
+}
+
+.scroll-to-top:hover {
+    background-color: #555;
+}
+
+.scroll-to-top-icon {
+    width: 1.5rem;
+}
+
+.nav-link-inactive {
+    pointer-events: none;
+    color: gray;
+    cursor: default;
+  }
+  
+  .nav-subtitle-inactive {
+    color: gray;
+    text-decoration: none;
+    cursor: default
+  }
+  
+  .icon {
+    color: inherit;
+  }
+
+
 
 /* Media Queries */
     @media (min-width: 601px) {

@@ -11,7 +11,7 @@ Chart.register(...registerables);
   standalone: true,
   imports: [RouterModule, BaseChartDirective],
   templateUrl: './charts.component.html',
-  styleUrls: ['./charts.component.css'],
+  styleUrl: './charts.component.css',
 })
 export class ChartComponent implements AfterViewInit {
   @ViewChild('pieCanvas') pieCanvas!: ElementRef<HTMLCanvasElement>;

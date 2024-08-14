@@ -1,4 +1,6 @@
-<app-landpage1 *ngIf="!isAdmin"></app-landpage1>
+
+<app-header1></app-header1>
+
 <router-outlet *ngIf="!isAdmin"></router-outlet>
 
 <div *ngIf="isAdmin">
@@ -9,4 +11,4 @@
 </div>
 
 <!-- Mostrar el footer solo si isAdmin es falso -->
-<app-footer *ngIf="!isAdmin"></app-footer>
+<app-footer *ngIf="!isAdmin && !isUser"></app-footer>
