@@ -10,7 +10,7 @@
 
     <div>
       <ul class="nav-list">
-        <div *ngIf="!isUserRoute() && !isAdminRoute()" class="contenedor-lista tooltip-container">
+        <div *ngIf="!isUserRoute() && !isAdminRoute() && currentRoute !== '/home'" class="contenedor-lista tooltip-container">
           <a 
             [routerLink]="currentRoute === '/home' ? '' : '/home'"
             [ngClass]="{'nav-link-inactive': currentRoute === '/home'}"

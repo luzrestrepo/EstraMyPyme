@@ -22,7 +22,7 @@
 
       <!-- Sección de Empresas Registradas -->
       <div
-        class="bg-gradient-to-r from-green-400 to-teal-500 p-4 rounded-lg shadow-md text-white"
+        class="bg-gradient-to-r from-green-400 to-teal-500 p-4 rounded-lg shadow-md text-white main-form"
       >
         <h2 class="text-xl font-bold mb-4">Empresas Registradas</h2>
         <button
@@ -39,36 +39,37 @@
         [title]="'Cambiar Contraseña'"
         [visible]="false"
       >
+      
         <form (ngSubmit)="changePassword()">
-          <mat-form-field appearance="fill" class="w-full mb-6">
-            <mat-label class="items-center">Contraseña Actual</mat-label>
-            <input
+          <mat-form-field appearance="fill" class="w-full mb-4">
+            <input class="label"
               matInput
               [(ngModel)]="passwordData.currentPassword"
               name="currentPassword"
               type="password"
               required
+              placeholder="Contraseña actual"
             />
           </mat-form-field>
           <mat-form-field appearance="fill" class="w-full mb-4">
-            <mat-label>Nueva Contraseña</mat-label>
-            <input
+            <input class="label"
               matInput
               [(ngModel)]="passwordData.newPassword"
               name="newPassword"
               type="password"
               required
+              placeholder="Nueva contraseña"
             />
           </mat-form-field>
           <mat-form-field appearance="fill" class="w-full mb-4">
-            <mat-label>Confirmar Nueva Contraseña</mat-label>
-            <input
+            <input class="label"
               matInput
               [(ngModel)]="passwordData.confirmPassword"
               name="confirmPassword"
               type="password"
               required
-            />
+              placeholder="Confirmar nueva contraseña"
+            >
           </mat-form-field>
           <div class="flex justify-end">
             <button
@@ -95,7 +96,7 @@
         >
           <mat-form-field class="flex-1">
             <!-- Cambia a flex-1 para que el input ocupe el espacio disponible -->
-            <input
+            <input class="label"
               matInput
               [(ngModel)]="company.name"
               name="companyName{{ i }}"
@@ -104,7 +105,8 @@
             />
           </mat-form-field>
           <button mat-icon-button color="warn" (click)="removeCompany(i)">
-            <mat-icon class="w-full">delete</mat-icon>
+            <mat-icon class="w-full">
+              <i class="fa-solid fa-trash" style="color: #ff0000;"></i></mat-icon>
           </button>
         </div>
         <div class="flex justify-between mt-4">

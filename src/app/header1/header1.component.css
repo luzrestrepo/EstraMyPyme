@@ -246,8 +246,8 @@ svg {
 /* app.component.css */
 .scroll-to-top {
     position: fixed;
-    top: 105px;
-    right: 30px;
+    bottom: 60px;
+    right: 45px;
     background-color: #fff;
     color: var(--indigo);
     border: none;
@@ -283,9 +283,6 @@ svg {
     color: inherit;
   }
 
-  #boton-interactivo {
-    white-space: nowrap;
-}
 
 
 /* Media Queries */
@@ -324,84 +321,8 @@ svg {
 
     }
 
-    @media (width= 768px) {
-
+    @media (max-width: 768px) {
         nav {
-            padding-right: 0;
-        }
-
-        .contenedor-titulo {
-            padding: 0 0.5rem;
-        }
-
-        .nav-item:not(#boton-interactivo) {
-            display: none;
-        }
-
-        nav ul {
-            display: flex;
-            flex-direction: row;
-            justify-content: flex-start;
-            min-width: 0px;
-        }
-
-        .titulo {
-            font-size: 1.9rem;
-        }
-
-        .contenedor-lista {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding-right: 1rem;
-        }
-
-        .dropdown-menu-svg {
-            display: block;
-            font-weight: normal;
-            position: absolute;
-            background-color: var(--morado);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-            z-index: 1;
-            top: 100%;
-            right: 1%;
-            min-width: 100px;
-            padding: 10px 0;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-10px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-        
-        .dropdown-item-svg {
-            display: flex;
-            font-size: 14px;
-            color: var(--negro);
-            background-color: var(--morado);
-            padding: 8px 2px;
-            text-decoration: none;
-            /* display: block; */
-            font-weight: 550;
-            justify-content: center;
-            align-items: center;
-            transition: color 0.3s ease;
-            transition: background-color 0.3s ease;
-        }
-        
-        .dropdown-item-svg:hover {
-            background-color: var(--indigo);
-            font-weight: bold;
-            color: #fff;
-        }
-        
-        /* Mostrar el menú desplegable con animación al pasar el ratón */
-        .nav-item-svg:hover .dropdown-menu-svg {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-        /* nav {
             display: flex;
             height: auto;
             padding: 0;
@@ -413,7 +334,7 @@ svg {
         .contenedor-lista {
             display: flex;
             justify-content: flex-end;
-            padding: 4px 4px 0 0;
+            padding: 8px 16px 0 0;
         }
 
         nav ul {
@@ -422,9 +343,9 @@ svg {
             align-items: center;
             justify-content: center;
             min-width: 0;
-            padding-right: .3rem;
+            padding-right: 1rem;
             padding-bottom: 5px;
-        } */
+        }
 
     }
 
@@ -434,7 +355,7 @@ svg {
             padding: 0 0.5rem;
         }
 
-        .nav-item:not(#boton-interactivo) {
+        .nav-item {
             display: none;
         }
 
@@ -501,23 +422,9 @@ svg {
             transform: translateY(0);
             transition: opacity 0.3s ease, transform 0.3s ease;
         }
-
     }
 
     @media (max-width: 505px) {
-
-        nav {
-            padding-right: 0;
-        }
-
-        .nav-item {
-            padding-right: 0 !important;
-        }
-
-        .nav-subtitle {
-            font-size: smaller;
-        }
-
         .contenedor-logo {
             display: flex;
             align-items: center;
@@ -544,7 +451,7 @@ svg {
         }
 
         .contenedor-lista {
-            padding-right: .5rem;
+            padding-right: 2%;
         }
 
         .titulo {
@@ -566,10 +473,5 @@ svg {
         .titulo {
             font-size: 1.1rem;
         }
-
-        .contenedor-lista {
-            padding-right: 4px;
-        }
     }
-
 

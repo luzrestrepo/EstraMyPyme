@@ -5,3 +5,11 @@
   align-items: center;
   padding: 6%;
 }
+
+.label {
+  padding-bottom: .3rem;
+}
+
+input::placeholder {
+  color: inherit
+}
