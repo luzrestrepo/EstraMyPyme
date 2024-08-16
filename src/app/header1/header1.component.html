@@ -35,7 +35,7 @@
           </li>
         </div>
         
-        <div *ngIf="!isUserRoute() && !isAdminRoute() && currentRoute !== '/register' && currentRoute !== '/login'" class="contenedor-lista tooltip-container">
+        <div *ngIf="!isUserRoute() && !isAdminRoute() && currentRoute !== '/register' && currentRoute !== '/login' && currentRoute !== '/examen'"  class="contenedor-lista tooltip-container">
           <a href="#etapas"><svg href="#etapas" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-affiliate nav-subtitle" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <path d="M5.931 6.936l1.275 4.249m5.607 5.609l4.251 1.275" />
@@ -50,7 +50,7 @@
           <li class="nav-item"><a class="nav-subtitle" href="#contacto">Contáctanos</a></li>
         </div>
         
-        <div *ngIf="!isUserRoute() && !isAdminRoute() && currentRoute !== '/register' && currentRoute !== '/login'" class="contenedor-lista tooltip-container">
+        <div *ngIf="!isUserRoute() && !isAdminRoute() && currentRoute !== '/register' && currentRoute !== '/login' && currentRoute !== '/examen'" class="contenedor-lista tooltip-container">
           <a href="#quienes-somos">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-teams nav-subtitle" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -67,7 +67,7 @@
           <li class="nav-item"><a class="nav-subtitle" href="#quienes-somos">Nosotros</a></li>
         </div>
 
-        <div *ngIf="currentRoute == '/home'" class="contenedor-lista">
+        <div *ngIf="currentRoute == '/home' || currentRoute == '/examen'" class="contenedor-lista">
           <li class="nav-item-svg"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user-circle nav-subtitle nav-item-svg" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />

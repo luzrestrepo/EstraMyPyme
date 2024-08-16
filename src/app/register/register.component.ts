@@ -28,6 +28,7 @@ export class RegisterComponent {
       username: new FormControl('', [Validators.required]),
       empresa: new FormControl('', [Validators.required]),
       sector: new FormControl('', [Validators.required]),
+      documento : new FormControl('', [Validators.required]),
       password: new FormControl('', [
         Validators.required,
         Validators.minLength(6),

@@ -1,0 +1,172 @@
+<!-- Página 1 -->
+
+<div *ngIf="currentPage === 1" class="container p-8 mx-auto my-12 bg-white rounded-lg shadow-lg">
+  <div>
+    <p class="font-bold text-black">Por favor ingresa tu número de Documento o NIT para iniciar el test:</p>
+    <br>
+    <input
+      type="text"
+      formControlName="documento"
+      placeholder="Número de NIT/CC"
+      maxlength="12"
+      class="w-48 p-3 text-gray-700 border rounded-lg focus:outline-none focus:ring" />
+      <div class="text-red-500"*ngIf="registerForm.get('documento')?.hasError('required')">
+        El tipo de documento es obligatorio.
+      </div>
+  </div>
+  
+    <h1 class="mb-6 text-2xl font-bold text-center text-blue-700">MATRIZ PARA LA CALIFICACIÓN DE LAS CAPACIDADES</h1>
+
+    <!-- Sección: Conocimiento del Impacto -->
+    <div class="mb-6">
+      <h2 class="mb-4 text-xl font-semibold text-black">Conocimiento del impacto</h2>
+      <p class="mb-4 text-gray-700">
+        Califique de 1 a 4, el impacto que genera esa capacidad frente al indicador seleccionado.
+      </p>
+      <label class="block mb-2 text-sm font-bold text-gray-700" for="conocimientoImpacto">
+        Nivel de Capacidad:
+      </label>
+      <select id="conocimientoImpacto" name="conocimientoImpacto" class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+        <option value="1">1 - No impacta el indicador</option>
+        <option value="2">2 - Impacta un poco el indicador</option>
+        <option value="3">3 - Impacta directamente el indicador</option>
+        <option value="4">4 - Impacta significativamente el indicador</option>
+      </select>
+    </div>
+  
+    <!-- Sección: Conocimiento de la Competencia -->
+    <div class="mb-6">
+      <h2 class="mb-4 text-xl font-semibold text-black">Conocimiento de la Competencia</h2>
+      <p class="mb-4 text-gray-700">
+        Califique de 2 a 4 Rareza ¿es esta capacidad rara en el mercado en el que compito?
+      </p>
+      <label class="block mb-2 text-sm font-bold text-gray-700" for="conocimientoCompetencia">
+        Nivel de Conocimiento:
+      </label>
+      <select id="conocimientoCompetencia" name="conocimientoCompetencia" class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+        <option value="2">2 - Es rara Esta capacidad la tienen los líderes del mercado en el que compito</option>
+        <option value="3">3 - Es muy rara Esta capacidad la tienen otras empresas, pero no existe en el mercado en el que compito</option>
+        <option value="4">4 - Es extremadamente rara esta capacidad Nadie en el mercado o en esta categoría tiene esta capacidad</option>
+      </select>
+    </div>
+  
+    <!-- Sección: Coherencia del Modelo de Imitar -->
+    <div class="mb-6">
+      <h2 class="mb-4 text-xl font-semibold text-black">Analisis de imitación</h2>
+      <p class="mb-4 text-gray-700">
+        Evaluar de 1 a 4 si mis elementos se pueden imitar
+      </p>
+      <label class="block mb-2 text-sm font-bold text-gray-700" for="coherenciaImitar">
+        Nivel de imitación:
+      </label>
+      <select id="coherenciaImitar" name="coherenciaImitar" class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+        <option value="1">1 - Me pueden copiar en menos de un año. No se requiere conocimiento técnico ni inversión</option>
+        <option value="2">2 - Me pueden copiar en 2 y 3 años. Se requiere conocimiento técnico básico e inversiones bajas</option>
+        <option value="3">3 - Me pueden copiar pero tardarán entre 5 y 10 años Se requiere conocimiento técnico e inversiones elevadas</option>
+        <option value="4">4 - Me pueden copiar pero tardarán más de 10 años, se requiere alto conocimiento técnico y niveles de inversión muy altos</option>
+      </select>
+    </div>
+  <div></div>
+    <!-- Sección: Alineación en la Comunicación Sustituir -->
+    <div class="mb-6">
+      <h2 class="mb-4 text-xl font-semibold text-black">Conocimiento de sustitución</h2>
+      <p class="mb-4 text-gray-700">
+        Califique de 1 a 4 difícil de sustituir.
+      </p>
+      <label class="block mb-2 text-sm font-bold text-gray-700" for="alineacionSustituir">
+        Nivel de sustitución:
+      </label>
+      <select id="alineacionSustituir" name="alineacionSustituir" class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+        <option value="1">1 - No es difícil de sustituir. Los competidores con una capacidad diferente pueden lograr el mismo beneficio</option>
+        <option value="2">2 - Es difícil de sustituir Mi competencia con una capacidad diferente, logra resultados similares a los míos</option>
+        <option value="3">3 - Es extremadamente difícil de sustituir Mi competencia con una capacidad diferente, logra resultados en la misma dirección, pero se alejan mucho de los míos</option>
+        <option value="4">4 - Es imposible de sustituir Mi competencia no puede lograr el mismo beneficio con una capacidad diferente</option>
+      </select>
+    </div>
+    
+    <!-- Botón Siguiente -->
+    <div class="flex justify-end">
+      <button (click)="goToPage(2)" class="px-3 py-2 leading-tight text-white bg-indigo-700 border border-gray-300 hover:bg-gray-100 hover:text-gray-700">
+        Siguiente
+      </button>
+    </div>
+  </div>
+  
+  <!-- Página 2 -->
+  <div *ngIf="currentPage === 2" class="container p-8 mx-auto my-12 bg-white rounded-lg shadow-lg">
+    <h1 class="mb-6 text-2xl font-bold text-center text-blue-700">Evaluación del Radar Estratégico Organizacional</h1>
+  
+    <!-- Sección: Conocimiento del Cliente -->
+    <div class="mb-6">
+      <h2 class="mb-4 text-xl font-semibold text-black">Conocimiento del Cliente</h2>
+      <p class="mb-4 text-gray-700">
+        Evaluar el grado de conocimiento que la empresa tiene sobre sus clientes, incluyendo sus necesidades, preferencias, y comportamientos.
+      </p>
+      <label class="block mb-2 text-sm font-bold text-gray-700" for="conocimientoCliente">
+        Nivel de Conocimiento:
+      </label>
+      <select id="conocimientoCliente" name="conocimientoCliente" class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+        <option value="1">1 - Bajo</option>
+        <option value="2">2 - Medio</option>
+        <option value="3">3 - Bueno</option>
+        <option value="4">4 - Excelente</option>
+      </select>
+    </div>
+  
+    <!-- Sección: Conocimiento del Negocio -->
+    <div class="mb-6">
+      <h2 class="mb-4 text-xl font-semibold text-black">Conocimiento del Negocio</h2>
+      <p class="mb-4 text-gray-700">
+        Medir el conocimiento que la empresa tiene sobre su propio sector, incluyendo las tendencias del mercado, la competencia, y las oportunidades emergentes.
+      </p>
+      <label class="block mb-2 text-sm font-bold text-gray-700" for="conocimientoNegocio">
+        Nivel de Conocimiento:
+      </label>
+      <select id="conocimientoNegocio" name="conocimientoNegocio" class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+        <option value="1">1 - Bajo</option>
+        <option value="2">2 - Medio</option>
+        <option value="3">3 - Bueno</option>
+        <option value="4">4 - Excelente</option>
+      </select>
+    </div>
+
+    <!-- Sección: Coherencia del Modelo de Negocio -->
+    <div class="mb-6">
+        <h2 class="mb-4 text-xl font-semibold text-black">Coherencia del Modelo de Negocio</h2>
+        <p class="mb-4 text-gray-700">
+            Evaluar si todos los elementos del modelo de negocio están alineados y funcionan coherentemente para alcanzar los objetivos de la empresa.
+        </p>
+        <label class="block mb-2 text-sm font-bold text-gray-700" for="coherenciaModelo">
+            Nivel de Coherencia:
+        </label>
+        <select id="coherenciaModelo" name="coherenciaModelo" class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+            <option value="1">1 - Bajo</option>
+            <option value="2">2 - Medio</option>
+            <option value="3">3 - Bueno</option>
+            <option value="4">4 - Excelente</option>
+        </select>
+    </div>
+  
+    <!-- Sección: Evaluación de la Estrategia -->
+    <div class="mb-6">
+      <h2 class="mb-4 text-xl font-semibold text-black">Evaluación de la Estrategia</h2>
+      <p class="mb-4 text-gray-700">
+        Evaluar la eficacia de la estrategia actual de la empresa, incluyendo su alineación con los objetivos a largo plazo y su capacidad para enfrentar desafíos.
+      </p>
+      <label class="block mb-2 text-sm font-bold text-gray-700" for="evaluacionEstrategia">
+        Nivel de Evaluación:
+      </label>
+      <select id="evaluacionEstrategia" name="evaluacionEstrategia" class="block w-full px-4 py-3 pr-8 leading-tight text-gray-700 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500">
+        <option value="1">1 - Bajo</option>
+        <option value="2">2 - Medio</option>
+        <option value="3">3 - Bueno</option>
+        <option value="4">4 - Excelente</option>
+      </select>
+    </div>
+  
+    <!-- Botón Siguiente -->
+    <div class="flex justify-end">
+        <button (click)="finalizarTest()" class="px-3 py-2 leading-tight text-white bg-indigo-700 border border-gray-300 hover:bg-gray-100 hover:text-gray-700">
+          Finalizar Test
+        </button>
+      </div>

@@ -15,7 +15,6 @@ export class UsersComponent implements OnInit {
     { name: 'Juan Pérez', email: 'juan.perez@example.com', role: 'Estudiante', empresa: 'Material XD Version' },
     { name: 'María López', email: 'maria.lopez@example.com', role: 'Profesor', empresa: 'Fix Platform Errors' },
     { name: 'Carlos Gómez', email: 'carlos.gomez@example.com', role: 'Profesor', empresa: 'Progress Track' },
-    { name: 'Andres Perez', email: 'andres.perez@example.com', role: 'Estudiante', empresa: 'Fix Platform Errors' },
     { name: 'Carolina Sanchez', email: 'carolina.sanchez@example.com', role: 'Profesor', empresa: 'Launch our Mobile App' },
     { name: 'Andrea Rodriguez', email: 'andres.rodriguez@example.com', role: 'Estudiante', empresa: 'Add the New Pricing Page' },
   ];
