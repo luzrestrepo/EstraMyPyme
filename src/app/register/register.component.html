@@ -89,6 +89,7 @@
             <option value="natural">Natural</option>
             <option value="juridica">Jurídica</option>
           </select>
+
           <div
             *ngIf="
               registerForm.get('persona')?.invalid &&
@@ -99,6 +100,27 @@
           >
             <div *ngIf="registerForm.get('persona')?.hasError('required')">
               El tipo de persona es obligatorio.
+            </div>
+          </div>
+          
+        </div>
+        <div>
+          <input
+            type="text"
+            formControlName="documento"
+            placeholder="Numero de NIT/CC"
+            class="w-full p-3 text-gray-700 border rounded-lg focus:outline-none focus:ring"
+          />
+          <div
+            *ngIf="
+              registerForm.get('documento')?.invalid &&
+              (registerForm.get('documento')?.dirty ||
+                registerForm.get('documento')?.touched)
+            "
+            class="mt-1 text-sm text-red-500"
+          >
+            <div *ngIf="registerForm.get('documento')?.hasError('required')">
+              El numero de NIT o CC es obligatorio.
             </div>
           </div>
         </div>

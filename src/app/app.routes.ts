@@ -11,6 +11,7 @@ import { UserDashboardComponent } from './users-view/user-dashboard/user-dashboa
 import { UserSettingsComponent } from './users-view/user-settings/user-settings.component';
 import { UserChartsComponent } from './users-view/user-charts/user-charts.component';
 import { BookComponent } from './users-view/book/book.component';
+import { ExamenComponent } from './examen/examen.component'; 
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -22,15 +23,15 @@ export const routes: Routes = [
   { path: 'admin/users', component: UsersComponent },
   { path: 'admin/settings', component: SettingsComponent },
   { path: 'admin/charts', component: ChartComponent },
-  { path: 'user', component: UserLayoutComponent,
+  {
+    path: 'user', component: UserLayoutComponent,
     children: [
       { path: '', redirectTo: 'book', pathMatch: 'full' },
       { path: 'book', component: BookComponent },
       { path: 'dashboard1', component: UserDashboardComponent },
-      { path: 'settings', component: UserSettingsComponent
-      },
+      { path: 'settings', component: UserSettingsComponent },
       { path: 'charts', component: UserChartsComponent },
     ]
-  }
+  },
+  { path: 'examen', component: ExamenComponent } 
 ];
-
