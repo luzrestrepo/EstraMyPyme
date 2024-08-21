@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -41,6 +41,19 @@ export class RegisterComponent {
 
   constructor(private userService: UsersService, private router: Router) {}
 
+  ngAfterViewInit(): void {
+    this.scrollToPosition();
+  }
+
+  private scrollToPosition(): void {
+    if (this.router.url === '/register') {
+      window.scrollTo({ top: 40, behavior: 'smooth' });
+    }
+  }
+
+
+  public submitted = false
+
   get name() {
     return this.registerForm.get('name');
   }
@@ -51,6 +64,7 @@ export class RegisterComponent {
 
   register() {
     if (this.registerForm.valid) {
+      this.submitted = true;
       this.userService.addUser(this.registerForm.value as User);
       console.log(this.registerForm.value);
       this.router.navigate(['/login']);
