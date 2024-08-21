@@ -12,12 +12,13 @@ import { UserSettingsComponent } from './users-view/user-settings/user-settings.
 import { UserChartsComponent } from './users-view/user-charts/user-charts.component';
 import { BookComponent } from './users-view/book/book.component';
 import { ExamenComponent } from './examen/examen.component'; 
+import { canDeactivateGuard } from './guards/can-deactivate.guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
+  { path: 'register', component: RegisterComponent, canDeactivate: [canDeactivateGuard] },
   { path: 'admin', redirectTo: 'admin/dashboard', pathMatch: 'full' },
   { path: 'admin/dashboard', component: DashboardComponent },
   { path: 'admin/users', component: UsersComponent },
